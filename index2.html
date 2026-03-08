@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dekhomacno.edu</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="stylesheet" href="styles.css">
+<style>
+:root{--bg:#131c3f;--surface:#1b2757;--card:#22316b;--border:#3a4c97;--accent:#6f7bff;--accent2:#15d4b3;--accent3:#ff7b8d;--text:#eef1ff;--muted:#acb5dd}
+html{font-size:110%}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',sans-serif;min-height:100vh}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 3rem;display:flex;align-items:center;gap:2.4rem;position:sticky;top:0;z-index:100;height:76px}
+.logo{font-size:1.35rem;font-weight:800;color:var(--accent);display:flex;align-items:center;gap:.55rem}
+.logo img{width:34px;height:34px;border-radius:8px;object-fit:cover;border:1px solid var(--border)}
+.logo span{color:var(--accent2)}
+.nav-links{display:flex;gap:.25rem}
+.nav-links a{padding:.6rem 1.15rem;border-radius:10px;text-decoration:none;color:var(--muted);font-size:.95rem;font-weight:600;transition:all .2s;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{background:var(--card);color:var(--text)}
+.nav-links a.active{color:var(--accent)}
+.page{display:none}.page.active{display:block}
+.hero{padding:0 0 3rem;max-width:none;margin:0;text-align:left}
+.badge{display:inline-block;background:rgba(108,99,255,.15);color:var(--accent);border:1px solid rgba(108,99,255,.3);border-radius:20px;padding:.35rem 1rem;font-size:.8rem;font-weight:600;margin-bottom:1.5rem;text-transform:uppercase;letter-spacing:1px}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;line-height:1.2;margin-bottom:1rem}
+.hp{color:var(--accent)}.hg{color:var(--accent2)}
+.hero>p{color:var(--muted);font-size:1.1rem;max-width:720px;margin:0 auto 3rem;line-height:1.7}
+.stats{display:flex;justify-content:center;gap:3rem;margin:2rem 0 3rem;flex-wrap:wrap}
+.stat .num{font-size:2rem;font-weight:800;color:var(--accent)}.stat .label{color:var(--muted);font-size:.85rem}
+.goal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.35rem;text-align:left}
+.gc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.9rem;position:relative;overflow:hidden;min-height:250px}
+.gc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.gc .icon{font-size:2.05rem;margin-bottom:.95rem}.gc h3{font-size:1.25rem;font-weight:700;margin-bottom:.75rem}
+.gc p{color:var(--muted);font-size:1.03rem;line-height:1.75}
+.ph{background:var(--surface);border-bottom:1px solid var(--border);padding:3rem 2rem 2.4rem}
+.phi{max-width:1100px;margin:0 auto}
+.ab{display:inline-block;width:40px;height:4px;border-radius:2px;margin-bottom:.75rem}
+.ph h2{font-size:1.8rem;font-weight:800;margin-bottom:.5rem}.ph p{color:var(--muted);font-size:.95rem}
+.fb{max-width:1100px;margin:1.5rem auto 0;padding:0 2rem;display:flex;gap:.5rem;flex-wrap:wrap}
+.fb button{padding:.45rem 1.1rem;border-radius:8px;border:1px solid var(--border);background:var(--card);color:var(--muted);font-size:.85rem;cursor:pointer;transition:all .2s}
+.fb button:hover,.fb button.active{background:var(--accent);border-color:var(--accent);color:white}
+.gc2{max-width:1100px;margin:0 auto;padding:2.5rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.ec{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;transition:border-color .2s,transform .2s}
+.ec:hover{border-color:rgba(108,99,255,.5);transform:translateY(-2px)}
+.ct{display:flex;justify-content:space-between;align-items:flex-start}
+.tag{display:inline-block;padding:.3rem .75rem;border-radius:6px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.t0{background:rgba(108,99,255,.2);color:var(--accent)}
+.t1{background:rgba(0,201,167,.2);color:var(--accent2)}
+.t2{background:rgba(255,107,107,.2);color:var(--accent3)}
+.t3{background:rgba(255,193,7,.2);color:#ffc107}
+.t4{background:rgba(33,150,243,.2);color:#2196f3}
+.t5{background:rgba(156,39,176,.2);color:#9c27b0}
+.t6{background:rgba(255,152,0,.2);color:#ff9800}
+.t7{background:rgba(0,188,212,.2);color:#00bcd4}
+.cs{font-size:.8rem;color:var(--muted);background:#2e3350;padding:.3rem .75rem;border-radius:6px}
+.et{font-size:1rem;font-weight:700;line-height:1.4}
+.em{display:flex;gap:1rem;font-size:.82rem;color:var(--muted)}
+.ea{display:flex;gap:.75rem;margin-top:auto}
+.btn{flex:1;padding:.6rem 1rem;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;border:none;transition:all .2s}
+.bp{background:var(--accent);color:white}.bp:hover{background:#5a52e0}
+.bo{background:transparent;color:var(--muted);border:1px solid var(--border)}.bo:hover{border-color:var(--accent2);color:var(--accent2)}
+.mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);z-index:999;align-items:center;justify-content:center;padding:1rem}
+.mo.open{display:flex}
+.md{background:var(--surface);border:1px solid var(--border);border-radius:16px;max-width:580px;width:100%;max-height:85vh;overflow-y:auto;padding:2rem;position:relative}
+.md h3{font-size:1.15rem;font-weight:800;margin-bottom:1.5rem}
+.mc{position:absolute;top:1rem;right:1rem;background:var(--card);border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center}
+.sd{background:linear-gradient(135deg,rgba(108,99,255,.15),rgba(0,201,167,.1));border:1px solid var(--border);border-radius:12px;padding:1rem 1.5rem;text-align:center;margin-bottom:1.5rem}
+.sd .big{font-size:2.5rem;font-weight:800;color:var(--accent)}.sd .sub{color:var(--muted);font-size:.85rem}
+.as{margin-bottom:1.5rem}.as h4{font-size:.82rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:.75rem}
+.ag{display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem}
+.ai{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.4rem .5rem;text-align:center}
+.ai .q{color:var(--muted);font-size:.72rem}.ai .a{font-weight:700;color:var(--accent2);font-size:.9rem}
+.study-wrap{max-width:1100px;margin:0 auto;padding:2.5rem 2rem}
+.tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem}
+.tool-card h3{font-size:1rem;margin-bottom:.9rem}
+.form-row{display:grid;grid-template-columns:minmax(0,1fr) 140px;gap:.6rem;margin-bottom:.6rem;align-items:stretch}
+.form-row-3{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.95fr) 120px;gap:.6rem;margin-bottom:.6rem;align-items:stretch}
+input,select,textarea{width:100%;padding:.6rem .75rem;border-radius:8px;border:1px solid var(--border);background:#161a28;color:var(--text);font-size:.86rem;min-height:42px}
+textarea{resize:vertical;min-height:88px}
+.form-row .btn,.form-row-3 .btn{height:100%;min-height:42px}
+.task-list{display:flex;flex-direction:column;gap:.55rem;max-height:220px;overflow:auto;padding-right:.25rem}
+.task-item{display:grid;grid-template-columns:auto 1fr auto;gap:.5rem;align-items:start;background:rgba(15,17,23,.6);border:1px solid var(--border);border-radius:10px;padding:.55rem .6rem}
+.task-item.done .task-title{text-decoration:line-through;color:var(--muted)}
+.task-meta{font-size:.75rem;color:var(--muted)}
+.mini-btn{background:transparent;border:1px solid var(--border);color:var(--muted);border-radius:8px;padding:.25rem .5rem;cursor:pointer}
+.mini-btn:hover{border-color:var(--accent3);color:var(--accent3)}
+.flash-box{background:linear-gradient(135deg,rgba(108,99,255,.12),rgba(0,201,167,.08));border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:.8rem;min-height:150px}
+.flash-q{font-size:.95rem;font-weight:700;margin-bottom:.75rem}
+.flash-a{color:var(--muted);line-height:1.6;display:none}
+.flash-a.open{display:block}
+.quiz-q{font-size:.9rem;font-weight:700;margin:.35rem 0 .6rem}
+.quiz-opts{display:flex;flex-direction:column;gap:.45rem}
+.quiz-opts label{display:flex;gap:.5rem;align-items:flex-start;background:rgba(15,17,23,.6);border:1px solid var(--border);border-radius:8px;padding:.45rem .5rem;font-size:.85rem;cursor:pointer}
+.muted{color:var(--muted);font-size:.82rem}
+.timer{font-size:2rem;font-weight:800;color:var(--accent);margin:.35rem 0 .75rem}
+.progress-grid{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:.6rem}
+.pstat{background:#161a28;border:1px solid var(--border);border-radius:10px;padding:.7rem .65rem;text-align:center}
+.pstat .n{font-size:1.2rem;font-weight:800;color:var(--accent2)}
+.pstat .l{font-size:.75rem;color:var(--muted)}
+@media(max-width:980px){.goal-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.form-row,.form-row-3{grid-template-columns:1fr}.progress-grid{grid-template-columns:repeat(2,minmax(120px,1fr))}}
+.site-footer{border-top:1px solid var(--border);margin-top:3rem;background:var(--surface);padding:2.4rem}
+.footer-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1.2fr;gap:1rem}
+.footer-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem}
+.footer-title{font-size:1rem;font-weight:700;margin-bottom:.6rem}
+.footer-item{color:var(--muted);font-size:.88rem;line-height:1.7}
+.contact-card .footer-title{font-size:1.2rem}
+.contact-card .footer-item{font-size:1.056rem}
+.footer-item a{color:var(--accent2);text-decoration:none}
+.footer-item a:hover{text-decoration:underline}
+.footer-map{width:100%;height:220px;border:0;border-radius:10px}
+.footer-copy{text-align:center;color:var(--muted);font-size:.82rem;margin-top:1rem}
+@media(max-width:860px){.footer-wrap{grid-template-columns:1fr}.footer-map{height:200px}}
+</style>
+</head>
+<body class="is-loading text-reveal-pending">
+<div id="pageLoader" class="page-loader" aria-live="polite" aria-busy="true">
+  <div class="loader-box">
+    <div class="loader-spinner" aria-hidden="true"></div>
+    <p>Đang tải dữ liệu đề thi...</p>
+    <div class="loader-bar"><span></span></div>
+  </div>
+</div>
+<nav>
+  <div class="logo"><img src="logo.png" alt="dekhomacno.edu logo"><span>dekhomacno.edu</span></div>
+  <div class="nav-links">
+    <a class="active" onclick="sp('home',this)">🏠 Trang Chủ</a>
+    <a onclick="sp('hsa',this)">📘 HSA</a>
+    <a onclick="sp('thptqg',this)">📗 THPTQG</a>
+    <a onclick="sp('study',this)">🧠 Ôn tập</a>
+  </div>
+</nav>
+
+<div id="home" class="page active">
+<div class="hero">
+  <div class="hero-split">
+  <div class="hero-media">
+    <img src="images/56611659-41a5-42fd-915d-ce68442de708.jpg" alt="Hình minh họa ôn luyện đề thi">
+  </div>
+  <div class="hero-panel">
+  <div class="badge">🎯 Thư viện đề thi miễn phí</div>
+                <h1>Đề khó - mặc nó</h1>
+  <p>Nơi chúng mình tổng hợp những tài liệu mà bạn có thể sẽ cần 😚</p>
+
+  <div class="hero-quote">“Luyện đề mỗi ngày – tăng điểm mỗi tuần.”</div>
+
+  <div class="hero-feature-strip">
+    <div class="hero-feature-item">
+      <div class="hero-feature-icon">📚</div>
+      <div>
+        <h4>Kho đề khổng lồ</h4>
+        <p>Hơn 18.000+ câu hỏi từ nhiều môn học.</p>
+      </div>
+    </div>
+    <div class="hero-feature-item">
+      <div class="hero-feature-icon">⚡</div>
+      <div>
+        <h4>Luyện tập thông minh</h4>
+        <p>Gợi ý bài theo mức độ hiện tại của bạn.</p>
+      </div>
+    </div>
+    <div class="hero-feature-item">
+      <div class="hero-feature-icon">📊</div>
+      <div>
+        <h4>Thống kê tiến bộ</h4>
+        <p>Theo dõi điểm số và nhịp độ học tập.</p>
+      </div>
+    </div>
+    <div class="hero-feature-item">
+      <div class="hero-feature-icon">🎯</div>
+      <div>
+        <h4>Chuẩn bị HSA / THPTQG</h4>
+        <p>Ôn tập đúng trọng tâm theo mục tiêu.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-cta-row">
+    <button class="btn bp" onclick="sp('study',document.querySelectorAll('.nav-links a')[3])">🔵 Bắt đầu luyện ngay</button>
+    <button class="btn bo" onclick="sp('hsa',document.querySelectorAll('.nav-links a')[1])">🟣 Làm thử đề miễn phí</button>
+    <button class="btn bo" onclick="sp('home',document.querySelectorAll('.nav-links a')[0]);document.querySelector('.gear-stage-block')?.scrollIntoView({behavior:'smooth',block:'center'});">⚪ Xem lộ trình học</button>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="num">18.4K+</div><div class="label">Lượt luyện đề/tháng</div></div>
+    <div class="stat"><div class="num">96.7%</div><div class="label">Người dùng quay lại</div></div>
+    <div class="stat"><div class="num">4.9/5</div><div class="label">Điểm hài lòng</div></div>
+    <div class="stat"><div class="num">312h</div><div class="label">Nội dung cập nhật</div></div>
+  </div>
+  </div>
+  </div>
+
+  <div class="trust-ribbon">
+    <div class="trust-marquee">
+      <div class="trust-track">
+        <span>⭐ 12.800+ tài khoản đang hoạt động</span>
+        <span>🏆 Top 1 nền tảng luyện đề nội bộ lớp</span>
+        <span>📈 Tăng trung bình +1.8 điểm sau 6 tuần</span>
+        <span>⚡ 0.4s tốc độ mở đề trung bình</span>
+      </div>
+      <div class="trust-track" aria-hidden="true">
+        <span>⭐ 12.800+ tài khoản đang hoạt động</span>
+        <span>🏆 Top 1 nền tảng luyện đề nội bộ lớp</span>
+        <span>📈 Tăng trung bình +1.8 điểm sau 6 tuần</span>
+        <span>⚡ 0.4s tốc độ mở đề trung bình</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker-marquee">
+      <div class="ticker-track">
+        <span>🔥 428 lượt làm đề trong 24h gần nhất</span>
+        <span>📌 2.340 bộ đáp án đã được tra cứu tuần này</span>
+        <span>🎯 89% học sinh hoàn thành đúng kế hoạch tuần</span>
+        <span>🧠 6.200 phiên Pomodoro đã hoàn thành tháng này</span>
+      </div>
+      <div class="ticker-track" aria-hidden="true">
+        <span>🔥 428 lượt làm đề trong 24h gần nhất</span>
+        <span>📌 2.340 bộ đáp án đã được tra cứu tuần này</span>
+        <span>🎯 89% học sinh hoàn thành đúng kế hoạch tuần</span>
+        <span>🧠 6.200 phiên Pomodoro đã hoàn thành tháng này</span>
+      </div>
+    </div>
+  </div>
+  <div class="goal-grid">
+    <div class="gc"><div class="icon">🏫</div><h3>Mục tiêu HSA</h3><p>Luyện đề đánh giá năng lực ĐHQG, gồm Tư duy Ngôn ngữ, Tư duy Toán học và Khoa học. Mục tiêu đạt 100+ điểm để xét tuyển đại học top.</p></div>
+    <div class="gc"><div class="icon">📝</div><h3>Mục tiêu THPTQG</h3><p>Ôn luyện toàn diện 7 môn thi Tốt nghiệp THPT Quốc gia. Mục tiêu đạt điểm xét tuyển đại học theo từng khối ngành phù hợp.</p></div>
+    <div class="gc"><div class="icon">📊</div><h3>Phương pháp học</h3><p>Làm đề theo năm, xem đáp án, phân tích điểm yếu. Luyện đều đặn mỗi ngày để cải thiện tốc độ và độ chính xác.</p></div>
+    <div class="gc"><div class="icon">🎓</div><h3>Lộ trình ôn tập</h3><p>Bắt đầu từ đề cũ nhất, tăng dần độ khó. Mỗi tuần làm 2–3 đề, phân tích lỗi sai và ôn lại kiến thức nền liên quan.</p></div>
+  </div>
+
+  <div class="home-stack">
+    <div class="home-block gear-stage-block">
+      <h3>🗺️ Lộ trình 4 giai đoạn chinh phục điểm cao</h3>
+      <div class="roadmap-wrap">
+        <div class="roadmap-wheel" role="tablist" aria-label="Lộ trình 4 giai đoạn">
+          <button class="roadmap-sector stage-1 active" data-stage="1" aria-selected="true" aria-label="Giai đoạn 1">1</button>
+          <button class="roadmap-sector stage-2" data-stage="2" aria-selected="false" aria-label="Giai đoạn 2">2</button>
+          <button class="roadmap-sector stage-3" data-stage="3" aria-selected="false" aria-label="Giai đoạn 3">3</button>
+          <button class="roadmap-sector stage-4" data-stage="4" aria-selected="false" aria-label="Giai đoạn 4">4</button>
+        </div>
+        <div class="roadmap-detail" id="roadmapDetail" aria-live="polite">
+          <div class="roadmap-badge">Giai đoạn đang chọn</div>
+          <h4 id="roadmapTitle">Giai đoạn 1</h4>
+          <p id="roadmapText">Ôn nền tảng 7–10 ngày: hệ thống lại công thức, dạng bài, từ khóa trọng tâm theo từng môn.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-block">
+      <h3>✅ Checklist làm đề hiệu quả mỗi ngày</h3>
+      <div class="home-list">
+        <div class="home-li">Đặt mục tiêu rõ cho từng buổi: số đề, chuyên đề, và mức điểm kỳ vọng.</div>
+        <div class="home-li">Làm đề trong khung thời gian chuẩn, không xem trước đáp án.</div>
+        <div class="home-li">Chấm lại ngay sau khi làm, khoanh nhóm lỗi do kiến thức và lỗi do kỹ năng.</div>
+        <div class="home-li">Ghi sổ lỗi sai ngắn gọn: lý do sai, cách sửa, ví dụ tương tự.</div>
+        <div class="home-li">Ôn lại phần sai sau 24 giờ để tăng khả năng ghi nhớ dài hạn.</div>
+      </div>
+    </div>
+
+    <div class="home-block">
+      <h3>📚 Kho tài nguyên theo mục tiêu</h3>
+      <div class="home-grid-3">
+        <div class="home-mini"><strong>HSA</strong><p>Toán, Ngữ văn, Tiếng Anh trong cùng một khu vực để luyện tập liên tục và đồng bộ.</p></div>
+        <div class="home-mini"><strong>THPTQG</strong><p>Đa môn, đa năm, phù hợp cả ôn nền lẫn giai đoạn tăng tốc nước rút.</p></div>
+        <div class="home-mini"><strong>Công cụ học</strong><p>Pomodoro, quiz, flashcard, theo dõi tiến độ giúp duy trì nhịp học bền vững.</p></div>
+      </div>
+    </div>
+
+    <div class="home-block power-block">
+      <h3>💎 Chỉ số nổi bật của nền tảng</h3>
+      <div class="power-grid">
+        <div class="power-item"><div class="pnum">1.240+</div><div class="plabel">Bộ đề đã chuẩn hóa</div></div>
+        <div class="power-item"><div class="pnum">37</div><div class="plabel">Chuyên đề trọng tâm</div></div>
+        <div class="power-item"><div class="pnum">98%</div><div class="plabel">Độ phủ dạng bài</div></div>
+        <div class="power-item"><div class="pnum">24/7</div><div class="plabel">Truy cập mọi lúc</div></div>
+        <div class="power-item"><div class="pnum">+2.1</div><div class="plabel">Điểm cải thiện TB</div></div>
+        <div class="power-item"><div class="pnum">410K+</div><div class="plabel">Lượt xem đề tích lũy</div></div>
+      </div>
+    </div>
+
+    <div class="home-block faq-block">
+      <h3>❓ Câu hỏi thường gặp</h3>
+      <div class="faq-item"><strong>Nên làm bao nhiêu đề mỗi tuần?</strong><p>Khuyến nghị 2–3 đề full + 3–4 buổi chữa đề kỹ để cải thiện điểm thực chất.</p></div>
+      <div class="faq-item"><strong>Làm đề trước hay học lý thuyết trước?</strong><p>Nếu nền yếu: học nhanh lý thuyết cốt lõi rồi làm đề. Nếu nền ổn: làm đề trước để lộ điểm yếu rồi ôn ngược.</p></div>
+      <div class="faq-item"><strong>Bị bí thời gian khi làm đề thì sao?</strong><p>Dùng chiến thuật 2 vòng: vòng 1 làm câu chắc ăn, vòng 2 quay lại câu khó để tối ưu điểm.</p></div>
+    </div>
+
+    <div class="home-cta">
+      <h3>🚀 Bắt đầu ngay hôm nay</h3>
+      <p>Chọn mục HSA hoặc THPTQG, mở đề đầu tiên và đặt mục tiêu tăng điểm sau mỗi tuần luyện tập.</p>
+      <div class="ea" style="justify-content:center;max-width:560px;margin:0 auto">
+        <button class="btn bp" onclick="sp('hsa',document.querySelectorAll('.nav-links a')[1])">Vào kho đề HSA</button>
+        <button class="btn bo" onclick="sp('thptqg',document.querySelectorAll('.nav-links a')[2])">Xem đề THPTQG</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="hsa" class="page">
+<div class="ph"><div class="phi"><div class="ab" style="background:linear-gradient(90deg,#6c63ff,#00c9a7)"></div><h2>📘 Đề Thi HSA (Toán • Ngữ Văn • Tiếng Anh)</h2><p>Tất cả đề HSA nằm trong một mục duy nhất, đã phân loại theo môn để luyện tập nhanh • Mở trực tiếp file PDF</p></div></div>
+<div class="fb">
+  <button class="active" onclick="fc('hg','all',this)">Tất cả</button>
+  <button onclick="fc('hg','toan',this)">📐 Toán HSA</button>
+  <button onclick="fc('hg','van',this)">📖 Ngữ văn HSA</button>
+  <button onclick="fc('hg','anh',this)">🌐 Tiếng Anh HSA</button>
+</div>
+<div class="gc2" style="padding-top:1rem;padding-bottom:0;grid-template-columns:1fr;">
+  <div class="ec" style="gap:.75rem">
+    <div class="ct"><span class="tag t0">Hướng dẫn sử dụng</span><span class="cs">Dành cho người mới</span></div>
+    <div class="et">Cách sử dụng kho đề trong 4 bước</div>
+    <div class="home-list">
+      <div class="home-li"><strong>Bước 1:</strong> Chọn môn bằng bộ lọc phía trên (Toán / Văn / Tiếng Anh).</div>
+      <div class="home-li"><strong>Bước 2:</strong> Nhấn <strong>📄 Xem đề</strong> để mở file đề trực tiếp từ thư mục.</div>
+      <div class="home-li"><strong>Bước 3:</strong> Làm đề theo thời gian thật, sau đó mở <strong>🔑 Gợi ý</strong> để đối chiếu.</div>
+      <div class="home-li"><strong>Bước 4:</strong> Sang tab <strong>🧠 Ôn tập</strong> để luyện flashcard, quick quiz và theo dõi tiến độ.</div>
+    </div>
+    <div class="em"><span>💡 Mẹo: luôn ghi lại 5 lỗi sai lặp sau mỗi đề</span><span>🎯 Mục tiêu: tăng dần độ chính xác qua từng tuần</span></div>
+  </div>
+</div>
+<div class="gc2" style="padding-top:.75rem;padding-bottom:0;grid-template-columns:1fr;">
+  <div class="ec" style="gap:.75rem">
+    <div class="ct"><span class="tag t3">Hướng dẫn luyện</span><span class="cs">Mẹo làm đề nhanh</span></div>
+    <div class="et">Chiến thuật luyện đề HSA theo 3 bước</div>
+    <div class="em"><span>1) Làm đề đúng thời gian</span><span>2) Chữa kỹ lỗi sai</span><span>3) Ôn lại lỗi sau 24h</span></div>
+  </div>
+</div>
+<div class="gc2" id="hg"></div>
+</div>
+
+<div id="thptqg" class="page">
+<div class="ph"><div class="phi"><div class="ab" style="background:linear-gradient(90deg,#ff6b6b,#ffc107)"></div><h2>📗 Đề Thi THPT Quốc Gia</h2><p>Đề thi chính thức từ 2018–2024 • 7 môn học đầy đủ</p></div></div>
+<div class="fb">
+  <button class="active" onclick="fc('tg','toan',this)">📐 Toán</button>
+  <button onclick="fc('tg','van',this)">📖 Văn</button>
+  <button onclick="fc('tg','anh',this)">🌐 Anh</button>
+  <button onclick="fc('tg','ly',this)">⚡ Lý</button>
+</div>
+<div class="gc2" style="padding-top:.75rem;padding-bottom:0;grid-template-columns:1fr;">
+  <div class="ec" style="gap:.75rem">
+    <div class="ct"><span class="tag t0">Hướng dẫn sử dụng</span><span class="cs">THPTQG nhanh gọn</span></div>
+    <div class="et">Cách dùng kho đề THPTQG hiệu quả</div>
+    <div class="home-list">
+      <div class="home-li"><strong>Bước 1:</strong> Chọn môn muốn luyện ở bộ lọc (Toán, Văn, Anh, Lý).</div>
+      <div class="home-li"><strong>Bước 2:</strong> Mở đề bằng nút <strong>📄 Xem đề</strong> và làm theo đúng thời gian chuẩn.</div>
+      <div class="home-li"><strong>Bước 3:</strong> Nhấn <strong>🔑 Gợi ý</strong> để đối chiếu và khoanh vùng lỗi sai chính.</div>
+      <div class="home-li"><strong>Bước 4:</strong> Vào tab <strong>🧠 Ôn tập</strong> để luyện lại bằng flashcard + quick quiz theo môn yếu.</div>
+    </div>
+    <div class="em"><span>📌 Gợi ý: làm tối thiểu 2 đề/môn mỗi tuần</span><span>🚀 Theo dõi tiến bộ bằng điểm quiz và checklist nhiệm vụ</span></div>
+  </div>
+</div>
+<div class="gc2" style="padding-top:.75rem;padding-bottom:0;grid-template-columns:1fr;">
+  <div class="ec" style="gap:.75rem">
+    <div class="ct"><span class="tag t6">Mẹo ôn THPTQG</span><span class="cs">Tăng điểm bền vững</span></div>
+    <div class="et">Công thức ôn thi 30 ngày trước kỳ thi</div>
+    <div class="em"><span>Tuần 1-2: Củng cố nền</span><span>Tuần 3: Luyện đề</span><span>Tuần 4: Tổng ôn lỗi sai</span></div>
+  </div>
+</div>
+<div class="gc2" id="tg">
+  <div class="ec coming-card" data-f="tailieu"><div class="ct"><span class="tag t3 coming-pill">THPTQG</span><span class="cs">Sắp cập nhật</span></div><div class="et">Mục tài liệu THPTQG mới</div><div class="em"><span>📁 Bạn sẽ thêm tài liệu sau</span><span>✨ Đã sẵn chỗ hiển thị</span></div><div class="ea"><button class="btn bo" disabled>⏳ Chờ thêm tài liệu</button><button class="btn bp" disabled>🔑 Chờ đáp án</button></div></div>
+  <div class="ec" data-f="toan"><div class="ct"><span class="tag t1">Toán</span><span class="cs">50 câu · 90'</span></div><div class="et">Đề Toán THPTQG 2024 – Mã đề 101</div><div class="em"><span>📅 2024</span><span>📊 TB: 6.4</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Toán THPTQG 2024','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="toan"><div class="ct"><span class="tag t1">Toán</span><span class="cs">50 câu · 90'</span></div><div class="et">Đề Toán THPTQG 2023 – Mã đề 101</div><div class="em"><span>📅 2023</span><span>📊 TB: 6.1</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Toán THPTQG 2023','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="toan"><div class="ct"><span class="tag t1">Toán</span><span class="cs">50 câu · 90'</span></div><div class="et">Đề Toán THPTQG 2022 – Mã đề 101</div><div class="em"><span>📅 2022</span><span>📊 TB: 6.5</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Toán THPTQG 2022','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="toan"><div class="ct"><span class="tag t1">Toán</span><span class="cs">50 câu · 90'</span></div><div class="et">Đề Toán THPTQG 2021 – Mã đề 101</div><div class="em"><span>📅 2021</span><span>📊 TB: 6.6</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Toán THPTQG 2021','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="toan"><div class="ct"><span class="tag t1">Toán</span><span class="cs">50 câu · 90'</span></div><div class="et">Đề Toán THPTQG 2020 – Mã đề 101</div><div class="em"><span>📅 2020</span><span>📊 TB: 7.1</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Toán THPTQG 2020','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="van"><div class="ct"><span class="tag t2">Ngữ Văn</span><span class="cs">Tự luận · 120'</span></div><div class="et">Đề Ngữ Văn THPTQG 2024</div><div class="em"><span>📅 2024</span><span>📊 TB: 6.8</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Ngữ Văn THPTQG 2024','10⁄10','van')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="van"><div class="ct"><span class="tag t2">Ngữ Văn</span><span class="cs">Tự luận · 120'</span></div><div class="et">Đề Ngữ Văn THPTQG 2023</div><div class="em"><span>📅 2023</span><span>📊 TB: 7.1</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Ngữ Văn THPTQG 2023','10⁄10','van')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="van"><div class="ct"><span class="tag t2">Ngữ Văn</span><span class="cs">Tự luận · 120'</span></div><div class="et">Đề Ngữ Văn THPTQG 2022</div><div class="em"><span>📅 2022</span><span>📊 TB: 7.0</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Ngữ Văn THPTQG 2022','10⁄10','van')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="anh"><div class="ct"><span class="tag t3">Tiếng Anh</span><span class="cs">50 câu · 60'</span></div><div class="et">Đề Tiếng Anh THPTQG 2024 – Mã 401</div><div class="em"><span>📅 2024</span><span>📊 TB: 5.9</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Tiếng Anh THPTQG 2024','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="anh"><div class="ct"><span class="tag t3">Tiếng Anh</span><span class="cs">50 câu · 60'</span></div><div class="et">Đề Tiếng Anh THPTQG 2023 – Mã 401</div><div class="em"><span>📅 2023</span><span>📊 TB: 6.2</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Tiếng Anh THPTQG 2023','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="anh"><div class="ct"><span class="tag t3">Tiếng Anh</span><span class="cs">50 câu · 60'</span></div><div class="et">Đề Tiếng Anh THPTQG 2022 – Mã 401</div><div class="em"><span>📅 2022</span><span>📊 TB: 5.7</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Tiếng Anh THPTQG 2022','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="ly"><div class="ct"><span class="tag t4">Vật Lý</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Vật Lý THPTQG 2024 – Mã đề 201</div><div class="em"><span>📅 2024</span><span>📊 TB: 5.8</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Vật Lý THPTQG 2024','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="ly"><div class="ct"><span class="tag t4">Vật Lý</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Vật Lý THPTQG 2023 – Mã đề 201</div><div class="em"><span>📅 2023</span><span>📊 TB: 6.0</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Vật Lý THPTQG 2023','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="ly"><div class="ct"><span class="tag t4">Vật Lý</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Vật Lý THPTQG 2022 – Mã đề 201</div><div class="em"><span>📅 2022</span><span>📊 TB: 5.6</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Vật Lý THPTQG 2022','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="hoa"><div class="ct"><span class="tag t5">Hóa Học</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Hóa Học THPTQG 2024 – Mã đề 201</div><div class="em"><span>📅 2024</span><span>📊 TB: 6.3</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Hóa Học THPTQG 2024','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="hoa"><div class="ct"><span class="tag t5">Hóa Học</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Hóa Học THPTQG 2023 – Mã đề 201</div><div class="em"><span>📅 2023</span><span>📊 TB: 6.1</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Hóa Học THPTQG 2023','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="hoa"><div class="ct"><span class="tag t5">Hóa Học</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Hóa Học THPTQG 2022 – Mã đề 201</div><div class="em"><span>📅 2022</span><span>📊 TB: 5.9</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Hóa Học THPTQG 2022','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="su"><div class="ct"><span class="tag t6">Lịch Sử</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Lịch Sử THPTQG 2024 – Mã đề 301</div><div class="em"><span>📅 2024</span><span>📊 TB: 6.7</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Lịch Sử THPTQG 2024','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="su"><div class="ct"><span class="tag t6">Lịch Sử</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Lịch Sử THPTQG 2023 – Mã đề 301</div><div class="em"><span>📅 2023</span><span>📊 TB: 6.9</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Lịch Sử THPTQG 2023','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="su"><div class="ct"><span class="tag t6">Lịch Sử</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Lịch Sử THPTQG 2022 – Mã đề 301</div><div class="em"><span>📅 2022</span><span>📊 TB: 7.0</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Lịch Sử THPTQG 2022','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="tin"><div class="ct"><span class="tag t7">Tin Học</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Tin Học THPTQG 2024 – Mã đề 501</div><div class="em"><span>📅 2024</span><span>📊 TB: 7.2</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Tin Học THPTQG 2024','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="tin"><div class="ct"><span class="tag t7">Tin Học</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Tin Học THPTQG 2023 – Mã đề 501</div><div class="em"><span>📅 2023</span><span>📊 TB: 7.5</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Tin Học THPTQG 2023','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+  <div class="ec" data-f="tin"><div class="ct"><span class="tag t7">Tin Học</span><span class="cs">40 câu · 50'</span></div><div class="et">Đề Tin Học THPTQG 2022 – Mã đề 501</div><div class="em"><span>📅 2022</span><span>📊 TB: 7.3</span></div><div class="ea"><button class="btn bo">📄 Xem đề</button><button class="btn bp" onclick="sa('Tin Học THPTQG 2022','10⁄10','thpt')">🔑 Đáp án</button></div></div>
+</div>
+</div>
+
+<div id="study" class="page">
+<div class="ph"><div class="phi"><div class="ab" style="background:linear-gradient(90deg,#6c63ff,#00c9a7)"></div><h2>🧠 Bộ Công Cụ Ôn Thi</h2><p>Lập kế hoạch • Flashcard • Quiz tự chấm • Pomodoro • Theo dõi tiến độ</p></div></div>
+<div class="study-wrap">
+  <div class="tool-grid">
+    <div class="tool-card">
+      <h3>📅 Kế hoạch học trong ngày</h3>
+      <div class="form-row-3">
+        <input id="taskSubject" placeholder="Môn học (VD: Toán)">
+        <input id="taskDate" type="date">
+        <button class="btn bp" onclick="addTask()">Thêm</button>
+      </div>
+      <textarea id="taskNote" placeholder="Nội dung cần ôn (VD: Hàm số, tích phân, 2 đề 2023)..."></textarea>
+      <div id="taskList" class="task-list" style="margin-top:.7rem"></div>
+    </div>
+
+    <div class="tool-card">
+      <h3>🃏 Flashcard theo môn</h3>
+      <div class="form-row" style="margin-bottom:.8rem">
+        <select id="flashSubject" onchange="changeFlashSubject(this.value)">
+          <option value="toan">📐 Toán</option>
+          <option value="van">📖 Ngữ Văn</option>
+          <option value="anh">🌐 Tiếng Anh</option>
+          <option value="ly">⚡ Vật Lý</option>
+          <option value="hoa">🧪 Hóa Học</option>
+          <option value="su">🏛 Lịch Sử</option>
+          <option value="tin">💻 Tin Học</option>
+        </select>
+        <button class="btn bo" onclick="shuffleFlashDeck()">🔀 Trộn thẻ</button>
+      </div>
+      <div class="flash-box">
+        <div class="flash-q" id="flashQ"></div>
+        <div class="flash-a" id="flashA"></div>
+      </div>
+      <div class="ea" style="margin-top:0">
+        <button class="btn bo" onclick="toggleFlashAnswer()">Hiện/Ẩn đáp án</button>
+        <button class="btn bo" onclick="markFlash(false)">Cần ôn lại</button>
+        <button class="btn bp" onclick="markFlash(true)">Đã nhớ</button>
+      </div>
+      <p class="muted" id="flashMeta" style="margin-top:.6rem"></p>
+      <div class="home-list" style="margin-top:.75rem">
+        <div class="home-li"><strong>🎯 Mục tiêu buổi học:</strong> Hoàn thành 20–30 thẻ, tỷ lệ nhớ cuối buổi ≥ 80%.</div>
+        <div class="home-li"><strong>🔁 Chu kỳ ôn lại:</strong> Ôn thẻ sai sau 24h và ôn lại lần 2 sau 72h.</div>
+        <div class="home-li"><strong>🧠 Mẹo ghi nhớ:</strong> Nói to đáp án + tự tạo ví dụ ngắn để tăng lưu giữ.</div>
+      </div>
+      <div class="home-grid-3" style="margin-top:.6rem;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:.45rem">
+        <div class="home-mini"><strong style="font-size:.88rem">Vòng 1</strong><p style="font-size:.8rem">Học nhanh toàn bộ thẻ.</p></div>
+        <div class="home-mini"><strong style="font-size:.88rem">Vòng 2</strong><p style="font-size:.8rem">Chỉ ôn thẻ đánh dấu sai.</p></div>
+        <div class="home-mini"><strong style="font-size:.88rem">Vòng 3</strong><p style="font-size:.8rem">Kiểm tra lại bằng quiz.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>❓ Quick Quiz theo môn</h3>
+      <div class="form-row" style="margin-bottom:.8rem">
+        <select id="quizSubject" onchange="setQuizSubject(this.value)">
+          <option value="mixed">🎯 Trộn tất cả môn</option>
+          <option value="toan">📐 Toán</option>
+          <option value="van">📖 Ngữ Văn</option>
+          <option value="anh">🌐 Tiếng Anh</option>
+          <option value="ly">⚡ Vật Lý</option>
+          <option value="hoa">🧪 Hóa Học</option>
+          <option value="su">🏛 Lịch Sử</option>
+          <option value="tin">💻 Tin Học</option>
+        </select>
+        <button class="btn bo" onclick="startQuiz()">🔄 Tạo theo môn</button>
+      </div>
+      <div id="quizWrap" class="muted">Nhấn bắt đầu để tạo bộ câu hỏi ngẫu nhiên.</div>
+      <div class="ea" style="margin-top:.7rem">
+        <button class="btn bo" onclick="startQuiz()">Tạo đề mới</button>
+        <button class="btn bp" onclick="submitQuiz()">Nộp bài</button>
+      </div>
+      <p class="muted" id="quizResult" style="margin-top:.6rem"></p>
+      <div class="home-list" style="margin-top:.75rem">
+        <div class="home-li"><strong>📊 Quy đổi nhanh:</strong> 5/5 = Rất tốt • 4/5 = Ổn định • 3/5 = Cần ôn thêm • ≤2/5 = Ôn lại nền.</div>
+        <div class="home-li"><strong>⏱️ Chiến thuật:</strong> Mỗi câu tối đa 45–60 giây, chưa chắc thì đánh dấu và chuyển ngay.</div>
+        <div class="home-li"><strong>📝 Sau khi nộp:</strong> Ghi lại 3 lỗi sai tiêu biểu và làm lại cùng môn sau 30 phút.</div>
+      </div>
+      <div class="home-grid-3" style="margin-top:.6rem;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.45rem">
+        <div class="home-mini"><strong style="font-size:.88rem">Lượt 1</strong><p style="font-size:.8rem">Lấy mốc điểm hiện tại.</p></div>
+        <div class="home-mini"><strong style="font-size:.88rem">Lượt 2</strong><p style="font-size:.8rem">Sửa lỗi và tăng +1 điểm.</p></div>
+        <div class="home-mini"><strong style="font-size:.88rem">Lượt 3</strong><p style="font-size:.8rem">Ổn định phản xạ làm bài.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>⏱️ Pomodoro ôn thi</h3>
+      <p class="muted">Chu kỳ mặc định 25 phút tập trung.</p>
+      <div class="timer" id="pomodoroDisplay">25:00</div>
+      <div class="ea" style="margin-top:0">
+        <button class="btn bo" onclick="togglePomodoro()" id="pomodoroBtn">Bắt đầu</button>
+        <button class="btn bo" onclick="resetPomodoro()">Đặt lại</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-card" style="margin-top:1.25rem">
+    <h3>📈 Tiến độ tổng quan</h3>
+    <div class="progress-grid">
+      <div class="pstat"><div class="n" id="pTask">0/0</div><div class="l">Việc hoàn thành</div></div>
+      <div class="pstat"><div class="n" id="pQuiz">0/5</div><div class="l">Điểm quiz cao nhất</div></div>
+      <div class="pstat"><div class="n" id="pFlash">0</div><div class="l">Flashcard đã nhớ</div></div>
+      <div class="pstat"><div class="n" id="pPomo">0</div><div class="l">Phiên Pomodoro</div></div>
+    </div>
+  </div>
+
+  <div class="tool-grid" style="margin-top:1.25rem">
+    <div class="tool-card">
+      <h3>🗓️ Lộ trình ôn tập 7 ngày gợi ý</h3>
+      <div class="task-list" style="max-height:none;gap:.45rem">
+        <div class="task-item"><div>📅</div><div><div class="task-title">Ngày 1: Chẩn đoán năng lực</div><div class="task-meta">Làm 1 đề tổng hợp, ghi lại 10 lỗi sai quan trọng nhất.</div></div></div>
+        <div class="task-item"><div>📅</div><div><div class="task-title">Ngày 2: Ôn kiến thức lõi</div><div class="task-meta">Tập trung 2 chuyên đề yếu nhất từ kết quả ngày 1.</div></div></div>
+        <div class="task-item"><div>📅</div><div><div class="task-title">Ngày 3: Luyện tốc độ</div><div class="task-meta">Làm bài bấm giờ 70–80% thời gian chuẩn để rèn phản xạ.</div></div></div>
+        <div class="task-item"><div>📅</div><div><div class="task-title">Ngày 4: Chữa đề sâu</div><div class="task-meta">Phân loại lỗi: kiến thức / kỹ năng / cẩn thận.</div></div></div>
+        <div class="task-item"><div>📅</div><div><div class="task-title">Ngày 5: Tăng cường môn yếu</div><div class="task-meta">Flashcard + quiz theo môn yếu, ưu tiên câu nền tảng.</div></div></div>
+        <div class="task-item"><div>📅</div><div><div class="task-title">Ngày 6: Mô phỏng đề thi thật</div><div class="task-meta">Làm 1 đề full đúng thời gian và điều kiện phòng thi.</div></div></div>
+        <div class="task-item"><div>📅</div><div><div class="task-title">Ngày 7: Tổng kết tuần</div><div class="task-meta">Đánh giá tiến bộ, chốt lỗi sai lặp và lên kế hoạch tuần mới.</div></div></div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>🎯 Chiến thuật làm đề & chữa lỗi</h3>
+      <div class="home-list">
+        <div class="home-li"><strong>Vòng 1:</strong> Ưu tiên câu chắc chắn để giữ điểm nền, không sa lầy câu khó.</div>
+        <div class="home-li"><strong>Vòng 2:</strong> Quay lại câu khó theo thứ tự dễ gỡ điểm nhất.</div>
+        <div class="home-li"><strong>Nguyên tắc 90 giây:</strong> Quá 90 giây chưa ra hướng, đánh dấu và bỏ qua tạm thời.</div>
+        <div class="home-li"><strong>Chữa lỗi theo mẫu:</strong> Sai ở đâu → vì sao sai → sửa thế nào → bài tương tự.</div>
+        <div class="home-li"><strong>Tối ưu trí nhớ:</strong> Ôn lại lỗi sai sau 24h và sau 72h để chống quên.</div>
+      </div>
+      <h3 style="margin-top:1rem">📌 Bảng kiểm trước ngày thi</h3>
+      <div class="home-grid-3" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem">
+        <div class="home-mini"><strong>Kiến thức</strong><p>Ôn công thức lõi, dạng bài trọng tâm, 20 lỗi sai hay gặp.</p></div>
+        <div class="home-mini"><strong>Kỹ năng</strong><p>Làm 1 đề full bấm giờ, canh thời gian từng phần.</p></div>
+        <div class="home-mini"><strong>Tâm lý</strong><p>Ngủ đủ, chuẩn bị giấy tờ, tránh học dồn sát giờ thi.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>📚 Gợi ý ôn nhanh theo môn</h3>
+      <div class="home-grid-3" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.55rem">
+        <div class="home-mini"><strong>📐 Toán</strong><p>Ưu tiên hàm số, mũ–log, nguyên hàm, xác suất; luyện máy tính cầm tay.</p></div>
+        <div class="home-mini"><strong>📖 Ngữ văn</strong><p>Học khung mở–thân–kết; luyện 200 chữ và phân tích tác phẩm trọng tâm.</p></div>
+        <div class="home-mini"><strong>🌐 Tiếng Anh</strong><p>Củng cố ngữ pháp nền + đọc hiểu + từ vựng chủ đề thường gặp.</p></div>
+        <div class="home-mini"><strong>⚡ Vật lý</strong><p>Nắm chắc công thức điện xoay chiều, dao động, sóng, lượng tử ánh sáng.</p></div>
+        <div class="home-mini"><strong>🧪 Hóa học</strong><p>Chủ động sơ đồ phản ứng, nhận biết chất, tính toán nhanh theo bảo toàn.</p></div>
+        <div class="home-mini"><strong>🏛 Lịch sử</strong><p>Học theo timeline + mốc sự kiện + ý nghĩa lịch sử trọng điểm.</p></div>
+      </div>
+    </div>
+
+    <div class="tool-card">
+      <h3>🔥 Nhiệm vụ gợi ý hôm nay <span id="dailyMissionDay" class="muted" style="margin-left:.35rem"></span></h3>
+      <div class="task-list" id="dailyMissionList" style="max-height:none;gap:.5rem"></div>
+      <p class="muted" id="dailyMissionNote" style="margin-top:.55rem"></p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="mo" id="modal">
+  <div class="md">
+    <button class="mc" onclick="cm()">✕</button>
+    <h3 id="mt"></h3>
+    <div class="sd"><div class="big" id="ms"></div><div class="sub">Điểm tối đa</div></div>
+    <div id="mc2"></div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-card contact-card">
+      <div class="footer-title">📍 Vị trí & Liên hệ</div>
+      <div class="footer-item"><strong>Trường:</strong> THPT Đan Phượng</div>
+      <div class="footer-item"><strong>Email:</strong> <a href="mailto:nguyenthanhtratpt@gmail.com">nguyenthanhtratpt@gmail.com</a></div>
+      <div class="footer-item"><strong>SĐT:</strong> <a href="tel:0911345846">0911345846</a></div>
+      <div class="footer-item"><strong>Facebook:</strong> <a href="https://www.facebook.com/bla.bla.779473" target="_blank" rel="noopener noreferrer">facebook.com/bla.bla.779473</a></div>
+      <div class="footer-item" style="margin-top:.5rem">Hỗ trợ học sinh ôn luyện HSA & THPTQG với kho đề và tài liệu cập nhật.</div>
+    </div>
+    <div class="footer-card">
+      <div class="footer-title">🗺️ Google Maps</div>
+      <iframe class="footer-map" src="https://www.google.com/maps?q=THPT%20%C4%90an%20Ph%C6%B0%E1%BB%A3ng&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 dekhomacno.edu — Thư viện đề thi HSA & THPTQG miễn phí</div>
+</footer>
+
+<script>
+const A=['A','B','C','D','A','C','B','D','A','B','C','A','D','B','C','D','A','C','B','A','D','A','C','B','D','C','A','B','D','A','C','B','A','D','C','B','A','C','D','B','B','D','A','C','D','B','A','C','B','D'];
+const HSA_SOURCE={
+  doc:'https://docs.google.com/document/d/1EYVmr6ICuDqQmZXfbqC9hsN2VI_rSjcILrZ4Z4jI01I/edit?tab=t.0',
+  folders:[
+    'https://drive.google.com/drive/folders/1snLXJqxdAmYDXpaCAk6Y5eIhxpYqfQff',
+    'https://drive.google.com/drive/folders/1Pl_EHF-yB4DbDkoF5zLLt_PX97oNokUT',
+    'https://drive.google.com/drive/folders/16A5jP3L2iU0XQFiJx1nVEu5bCWleDo7j',
+    'https://drive.google.com/drive/folders/1BYckhH8qZMjQO_Py3K2OYQppjOuk6ZTH',
+    'https://drive.google.com/drive/folders/1nvjiuxGUJFpax7Q8jvkrv8QQqcLVyESy',
+    'https://drive.google.com/drive/folders/1XzemWXaibdrV79FNDuF6SOjJlzpG_hpq',
+    'https://drive.google.com/drive/folders/1rSyvurGn9y-EuRhUcwdXqTcL0LznBnLh',
+    'https://drive.google.com/drive/folders/1qb3G3Pnc8_0RDfx3AbnPuOD-W43gVh_X'
+  ]
+};
+const HSA_MATH_FILES=[
+  'Đề toán HSA 01.pdf',
+  'Đề toán HSA 02.pdf',
+  'Đề toán HSA 03.pdf',
+  'PHẦN ĐỀ 4.pdf',
+  'PHẦN ĐỀ 5.pdf',
+  'PHẦN ĐỀ 6.pdf',
+  'PHẦN ĐỀ 7.pdf',
+  'PHẦN ĐỀ 8.pdf',
+  'PHẦN ĐỀ 9.pdf',
+  'PHẦN ĐỀ 10.pdf',
+  'ĐỀ SỐ 11.pdf',
+  'ĐỀ 12.pdf',
+  'PHẦN TOÁN HỌC (ĐỀ).pdf',
+  'PHẦN TOÁN HỌC (ĐỀ) 14.pdf',
+  '11. ĐỀ HSA 15 - PHẦN TOÁN (ĐỀ).pdf'
+];
+const HSA_LITERATURE_FILES=[
+  'VAN HSA 1 - DE.pdf',
+  'VAN HSA 2 - DE.pdf',
+  '3. Đề định tính 3 - ĐỀ BÀI.pdf',
+  'đề văn hsa 04.pdf',
+  'PHẦN ĐỀ 5.pdf',
+  'PHẦN ĐỀ 6.pdf',
+  'PHẦN ĐỀ 7.pdf',
+  'PHẦN ĐỀ 8.pdf',
+  '9. ĐỀ HSA 9 - PHẦN VĂN HỌC (ĐỀ).pdf',
+  '10. ĐỀ HSA 10 - PHẦN VĂN HỌC (ĐỀ).pdf',
+  '11. ĐỀ HSA 11 - PHẦN VĂN HỌC (ĐỀ).pdf',
+  '12. ĐỀ HSA 12 - PHẦN VĂN (ĐỀ).pdf',
+  '13. ĐỀ HSA 13 - PHẦN VĂN HỌC (ĐỀ).pdf',
+  '14. ĐỀ HSA 14 - PHẦN VĂN (ĐỀ).pdf',
+  '15. ĐỀ HSA 15 - PHẦN VĂN HỌC (ĐỀ).pdf'
+];
+const HSA_ENGLISH_FILES=[
+  'ANH HSA - ĐỀ (1).pdf',
+  'ANH HSA - ĐỀ (2).pdf',
+  'ANH HSA - ĐỀ (3).pdf',
+  'ANH HSA - ĐỀ (4).pdf',
+  'ANH HSA - ĐỀ (5).pdf',
+  'ANH HSA - ĐỀ (6).pdf',
+  'ANH HSA - ĐỀ (7).pdf',
+  'ANH HSA - ĐỀ.pdf',
+  'HSA ANH - ĐỀ.pdf',
+  'TIẾNG ANH HSA - ĐỀ.pdf'
+];
+const HSA_ENGLISH_ANSWER_FILES=[
+  'ANH HSA - KEY (1).pdf',
+  'ANH HSA - KEY (2).pdf',
+  'ANH HSA - KEY (3).pdf',
+  'ANH HSA - KEY (4).pdf',
+  'ANH HSA - KEY (5).pdf',
+  'ANH HSA - KEY (6).pdf',
+  'ANH HSA - KEY.pdf',
+  'HSA ANH - ĐÁP ÁN.pdf',
+  'TIẾNG ANH HSA - KEY.pdf'
+];
+const HSA_MATH_ANSWER_FILES=[
+  'Đề toán HSA 01 - Lời giải.pdf',
+  'Đề toán HSA 02 - Lời giải.pdf',
+  'Đề toán HSA 03 - Lời giải.pdf',
+  'PHẦN ĐÁP ÁN 4.pdf',
+  'PHẦN ĐÁP ÁN 5.pdf',
+  'PHẦN ĐÁP ÁN 6.pdf',
+  'PHẦN ĐÁP ÁN 7.pdf',
+  'PHẦN ĐÁP ÁN 8.pdf',
+  'PHẦN ĐÁP ÁN 9.pdf',
+  'PHẦN ĐÁP ÁN 10.pdf',
+  'ĐÁP ÁN ĐỀ SỐ 11.pdf',
+  'LỜI GIẢI ĐỀ 12.pdf',
+  'PHẦN TOÁN HỌC (ĐÁP ÁN).pdf',
+  'PHẦN TOÁN (ĐÁP ÁN) 14.pdf',
+  '11. ĐỀ HSA 15 - PHẦN TOÁN HỌC (ĐÁP ÁN).pdf'
+];
+const HSA_LITERATURE_ANSWER_FILES=[
+  'Van hoc de 1.pdf',
+  'VAN HSA 2 - DAP AN.pdf',
+  '3. Đề định tính 3 - ĐÁP ÁN.pdf',
+  'đáp án ề văn hsa 04.pdf',
+  'PHẦN ĐÁP ÁN 5 (1).pdf',
+  'PHẦN ĐÁP ÁN 6 (1).pdf',
+  'PHẦN ĐÁP ÁN 7 (1).pdf',
+  'PHẦN ĐÁP ÁN 8 (1).pdf',
+  '9. ĐỀ HSA 9 - PHẦN VĂN HỌC (ĐÁP ÁN).pdf',
+  '10. ĐỀ HSA 10 - PHẦN VĂN HỌC (ĐÁP ÁN).pdf',
+  '11. ĐỀ HSA 11 - PHẦN VĂN HỌC (ĐÁP ÁN).pdf',
+  '12. ĐỀ HSA 12 - PHẦN VĂN HỌC (ĐÁP ÁN).pdf',
+  '13. ĐỀ HSA 13 - PHẦN VĂN HỌC (ĐÁP ÁN).pdf',
+  '14. ĐỀ HSA 14 - PHẦN VĂN HỌC (ĐÁP ÁN).pdf',
+  '15. ĐỀ HSA 15 - PHẦN VĂN HỌC (ĐÁP ÁN).pdf'
+];
+const THPT_LITERATURE_FILES=[
+  '1. PHÚ THỌ. ĐH THƠ SÔNG HỒNG.docx',
+  '23. HÀ NỘI. ĐH TIỂU THUYÊT DẤU CHÂN NGƯỜI LÍNH.docx',
+  '24. HẢI PHÒNG. ĐH VBNL BỨC XÚC KHÔNG LÀM TA VÔ CAN.docx',
+  '27. THÁI NGUYÊN. ĐH VBNL MAY MẮN CÓ PHẢI TỰ NHIÊN MÀ CÓ.docx',
+  'đề văn chuyên phan bội châu nghệ an l2.pdf',
+  'Đề văn Liên trường Hà Nội 2025.pdf',
+  'Đề văn sở Bình Phước 23.05.2025.pdf',
+  'Đề văn sở Hải Dương 16.05.2025.pdf',
+  'Đề văn sở Hải phòng 19.05.2025.pdf',
+  'Đề văn sở Nam Định 19.05.2025.pdf',
+  'Đề văn sở Nam Định lần 2 12.06.2025.pdf',
+  'Đề văn sở Nghệ An lần 3 14.06.2025.pdf',
+  'Đề văn sở Phú Yên 2025 17.05.2025.pdf',
+  'đề văn sở thái bình lần 2 28_05_2025.pdf',
+  'Đề văn sở Tây Ninh 21.05.2025.pdf',
+  'Đề văn Đồng Tháp 20.05.2025.pdf'
+];
+const THPT_MATH_FILES=[
+  'T0010_Đề số 01 - Lớp 12 - Đợt 1 - Mùa 1 - Đại Hội Thi Thử THPTQG - Môn Toán.pdf',
+  'T0011_Đề số 02 - Lớp 12 - Đợt 1 - Mùa 1 - Đại Hội Thi Thử THPTQG - Môn Toán.pdf',
+  'T0017_Đề số 03 - Lớp 12 - Đợt 1 - Mùa 1 - Đại Hội Thi Thử THPTQG - Môn Toán.pdf',
+  'T0042_Toán - Đề số 01 - Đợt 2 - Mùa 1.pdf',
+  'T0043_Toán - Đề số 02 - Đợt 2 - Mùa 1.pdf',
+  'T0044_Toán - Đề số 03 - Đợt 2 - Mùa 1.pdf'
+];
+const THPT_ENGLISH_FILES=[
+  'Đề KSCL Thi Tốt Nghiệp 2026 Môn Tiếng Anh Cụm Trường Bắc Ninh Lần 1 Có Đáp Án.docx',
+  'Đề KSCL Thi Tốt Nghiệp 2026 Môn Tiếng Anh Cụm Trường Bắc Ninh Lần 1 Có Đáp Án(1).docx',
+  'Đề Thi Thử Tốt Nghiệp 2026 Tiếng Anh Chuyên Bắc Giang Lần 1 Có Đáp Án.docx',
+  'Đề Thi Thử Tốt Nghiệp 2026 Tiếng Anh Chuyên Bắc Ninh Lần 1 Có Lời Giải.docx',
+  'Đề Thi Thử Tốt Nghiệp 2026 Tiếng Anh Chuyên Khoa Học Tự Nhiên Lần 2 Có Đáp Án.docx',
+  'Đề Thi Thử Tốt Nghiệp 2026 Tiếng Anh Sở GD Ninh Bình Lần 1 Giải Chi Tiết.docx',
+  'Đề Thi Thử Tốt Nghiệp 2026 Tiếng Anh Sở GD Phú Thọ Lần 1 Giải Chi Tiết.docx',
+  'Đề Thi Thử Tốt Nghiệp 2026 Tiếng Anh THPT Chuyên Thoại Ngọc Hầu Lần 1 Có Đáp Án.docx',
+  'Đề Thi Thử Tốt Nghiệp 2026 Tiếng Anh THPT Đào Duy Từ Thanh Hóa Có Đáp Án.docx'
+];
+const THPT_PHYSICS_FILES=[
+  '1. Đề cụm Bắc Ninh lần 1 - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf',
+  '2. Đề quế võ 1 lần 1- [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf',
+  '3. Lê Thánh Tông - HCM - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf',
+  '4. Nguyễn Khuyến - Lê Thánh Tông - HCM - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf',
+  '5. THPT Ngô Gia Tự - Phú Thọ - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf',
+  '6. Đề Cụm Bắc Ninh - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf',
+  '7 . Chuyên KHTN HÀ NỘI - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf',
+  '8. Sở Ninh Bình - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ].pdf',
+  '9. Liên trường Nghệ An - [Thi thử Tốt Nghiệp THPT 2026 Môn VẬT LÝ ] Đề.pdf'
+];
+const SKEY='onthipro_state_v1';
+const WEEKDAY_LABELS=['Chủ nhật','Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7'];
+const DAILY_MISSIONS_BY_WEEKDAY={
+  0:[
+    {title:'Ôn nhẹ + hệ thống hóa kiến thức',meta:'Rà 15 lỗi sai tuần trước và ghi cách sửa ngắn gọn.'},
+    {title:'Làm 15 flashcard môn yếu',meta:'Mục tiêu ghi nhớ tối thiểu 12/15 thẻ.'},
+    {title:'1 lượt quiz mixed',meta:'Đạt từ 4/5 để giữ nhịp học.'},
+    {title:'Lên kế hoạch học cả tuần',meta:'Chốt rõ 3 mục tiêu điểm số cần đạt.'}
+  ],
+  1:[
+    {title:'Làm 1 đề Toán THPT 90 phút',meta:'Mục tiêu đúng ≥ 35 câu, ghi lại câu sai do chủ quan.'},
+    {title:'Chữa đề Toán theo 4 bước',meta:'Sai ở đâu → vì sao sai → sửa thế nào → bài tương tự.'},
+    {title:'Quick Quiz môn Toán 2 lượt',meta:'Lượt 2 phải cao hơn lượt 1 ít nhất 1 câu.'},
+    {title:'Pomodoro 2 phiên liên tiếp',meta:'Tập trung tuyệt đối, không đa nhiệm.'}
+  ],
+  2:[
+    {title:'Ôn Ngữ Văn trọng tâm',meta:'Luyện 1 đoạn 200 chữ + 1 dàn ý nghị luận văn học.'},
+    {title:'Làm 20 flashcard Văn',meta:'Mục tiêu nắm khung mở–thân–kết và dẫn chứng tiêu biểu.'},
+    {title:'Quick Quiz Văn + Sử',meta:'Rèn phản xạ đọc hiểu và tư duy timeline.'},
+    {title:'Tổng hợp 5 lỗi diễn đạt',meta:'Sửa câu dài, lặp ý, lỗi chính tả.'}
+  ],
+  3:[
+    {title:'Ngày Tiếng Anh tăng tốc',meta:'Làm 1 mini test ngữ pháp + đọc hiểu 25 câu.'},
+    {title:'Ôn 30 từ vựng chủ đề',meta:'Học theo cụm từ và ví dụ ngắn.'},
+    {title:'Quick Quiz môn Anh 2 lượt',meta:'Mục tiêu đạt 4/5 ở cả hai lượt.'},
+    {title:'Flashcard Anh 20 thẻ',meta:'Ưu tiên cấu trúc dễ nhầm và thì.'}
+  ],
+  4:[
+    {title:'Làm đề tổ hợp tự nhiên',meta:'Lý/Hóa làm theo thời gian chuẩn.'},
+    {title:'Ôn công thức Lý & Hóa',meta:'Tạo 1 trang công thức tóm tắt.'},
+    {title:'Quick Quiz Lý/Hóa',meta:'Rèn độ chính xác trước khi tăng tốc độ.'},
+    {title:'Chữa lỗi tính toán',meta:'Đánh dấu lỗi đổi đơn vị và sai số học.'}
+  ],
+  5:[
+    {title:'Mô phỏng đề thi thật',meta:'Làm 1 đề full trong điều kiện như phòng thi.'},
+    {title:'Rà soát chiến thuật phân bổ thời gian',meta:'Điều chỉnh theo điểm mạnh/yếu hiện tại.'},
+    {title:'Quick Quiz mixed 3 lượt',meta:'Mục tiêu điểm trung bình ≥ 4/5.'},
+    {title:'Pomodoro 3 phiên',meta:'Chia block: làm đề → chữa đề → ôn lại lỗi.'}
+  ],
+  6:[
+    {title:'Tổng kết tuần học',meta:'So sánh tiến bộ so với tuần trước.'},
+    {title:'Chốt 10 lỗi sai lặp',meta:'Biến thành checklist cần tránh tuần tới.'},
+    {title:'Ôn nhẹ bằng flashcard mixed',meta:'Duy trì trí nhớ nhưng tránh quá tải.'},
+    {title:'Lập kế hoạch tuần mới',meta:'Xác định rõ môn ưu tiên và số đề cần làm.'}
+  ]
+};
+const FLASH_DECKS={
+  toan:[
+    {q:'Toán: Công thức đạo hàm của sin(x)?',a:'(sin x)\' = cos x'},
+    {q:'Toán: Công thức đạo hàm của cos(x)?',a:'(cos x)\' = -sin x'},
+    {q:'Toán: Điều kiện phương trình bậc hai có 2 nghiệm phân biệt?',a:'Δ > 0 với Δ = b² - 4ac'},
+    {q:'Toán: Công thức nghiệm phương trình bậc hai?',a:'x = (-b ± √Δ)/(2a)'},
+    {q:'Toán: Tổng cấp số cộng n số đầu?',a:'Sₙ = n(a₁ + aₙ)/2'},
+    {q:'Toán: Công bội cấp số nhân là gì?',a:'q = uₙ₊₁ / uₙ (uₙ ≠ 0)'},
+    {q:'Toán: Hàm số đồng biến khi nào?',a:'f\'(x) > 0 trên khoảng đang xét'},
+    {q:'Toán: Tiệm cận đứng của hàm phân thức xuất hiện khi?',a:'Mẫu bằng 0 và tử khác 0 tại điểm đó'}
+  ],
+  van:[
+    {q:'Văn: Bố cục đoạn nghị luận xã hội 200 chữ?',a:'Nêu vấn đề → Giải thích/Phân tích → Dẫn chứng → Bài học nhận thức & hành động'},
+    {q:'Văn: Các bước làm câu đọc hiểu?',a:'Đọc kỹ ngữ liệu → gạch từ khóa → xác định yêu cầu → trả lời ngắn gọn đúng trọng tâm'},
+    {q:'Văn: Mở bài nghị luận văn học nên có gì?',a:'Giới thiệu tác giả, tác phẩm, vấn đề nghị luận và định hướng cảm nhận'},
+    {q:'Văn: Thân bài cần tránh lỗi gì?',a:'Kể lại tác phẩm quá dài, thiếu phân tích nghệ thuật và thiếu dẫn chứng tiêu biểu'},
+    {q:'Văn: Kết bài tốt cần làm gì?',a:'Khái quát giá trị nội dung, nghệ thuật và mở rộng suy nghĩ ngắn gọn'},
+    {q:'Văn: Mẹo tăng điểm diễn đạt?',a:'Viết câu rõ chủ-vị, liên kết ý mạch lạc, hạn chế lặp từ và lỗi chính tả'},
+    {q:'Văn: Dẫn chứng nghị luận xã hội nên ra sao?',a:'Ngắn gọn, tiêu biểu, gần thực tế và có liên hệ bản thân'},
+    {q:'Văn: Nêu tác dụng biện pháp tu từ?',a:'Chỉ rõ biện pháp + tác dụng biểu đạt + cảm xúc/ý nghĩa trong ngữ cảnh'}
+  ],
+  anh:[
+    {q:'Anh: Cấu trúc câu điều kiện loại 1?',a:'If + S + V(s/es), S + will + V-inf'},
+    {q:'Anh: Cấu trúc câu điều kiện loại 2?',a:'If + S + V2/ed, S + would + V-inf'},
+    {q:'Anh: Dấu hiệu thì hiện tại hoàn thành?',a:'Since, for, already, yet, just, recently'},
+    {q:'Anh: Mẹo làm bài đọc hiểu nhanh?',a:'Skim ý chính trước, scan từ khóa câu hỏi, loại trừ đáp án sai rõ ràng'},
+    {q:'Anh: Cấu trúc so sánh hơn?',a:'Adj-er + than hoặc more + adj + than'},
+    {q:'Anh: Cấu trúc so sánh nhất?',a:'The + adj-est hoặc the most + adj'},
+    {q:'Anh: Cụm used to + gì?',a:'used to + V-inf (thói quen trong quá khứ)'},
+    {q:'Anh: Mệnh đề quan hệ who dùng cho?',a:'Thay thế danh từ chỉ người, làm chủ ngữ hoặc tân ngữ'}
+  ],
+  ly:[
+    {q:'Lý: Công thức định luật Ôm?',a:'I = U / R'},
+    {q:'Lý: Công suất điện?',a:'P = U.I = I²R = U²/R'},
+    {q:'Lý: Tần số và chu kỳ liên hệ?',a:'f = 1/T'},
+    {q:'Lý: Công thức con lắc lò xo chu kỳ?',a:'T = 2π√(m/k)'},
+    {q:'Lý: Vận tốc sóng cơ?',a:'v = λf'},
+    {q:'Lý: Mạch RLC cộng hưởng khi?',a:'X_L = X_C'},
+    {q:'Lý: Năng lượng photon?',a:'E = hf = hc/λ'},
+    {q:'Lý: Dòng điện trong kim loại là gì?',a:'Dòng chuyển dời có hướng của electron tự do'}
+  ],
+  hoa:[
+    {q:'Hóa: Công thức pH?',a:'pH = -log[H⁺]'},
+    {q:'Hóa: Điều kiện phản ứng este hóa?',a:'RCOOH + R\'OH ⇌ RCOOR\' + H₂O (H₂SO₄ đặc, đun nóng)'},
+    {q:'Hóa: Dãy hoạt động kim loại dùng để làm gì?',a:'So sánh tính khử, dự đoán khả năng phản ứng thế'},
+    {q:'Hóa: Số oxi hóa của O trong đa số hợp chất?',a:'-2 (trừ peoxit, OF₂...)'},
+    {q:'Hóa: Nhận biết ion Cl⁻ thường dùng?',a:'Dùng AgNO₃ tạo kết tủa trắng AgCl'},
+    {q:'Hóa: Công thức tính hiệu suất phản ứng?',a:'H% = (lượng thực tế / lượng lý thuyết) × 100%'},
+    {q:'Hóa: Môi trường bazơ có pH?',a:'pH > 7'},
+    {q:'Hóa: Cách nhớ hóa trị nhanh?',a:'Nhóm IA: +1, IIA: +2, IIIA: +3; halogen thường -1'}
+  ],
+  su:[
+    {q:'Sử: Đảng Cộng sản Việt Nam thành lập năm nào?',a:'03/02/1930'},
+    {q:'Sử: Chiến thắng Điện Biên Phủ năm nào?',a:'1954'},
+    {q:'Sử: Hiệp định Giơ-ne-vơ ký năm?',a:'1954'},
+    {q:'Sử: Đại thắng mùa Xuân giải phóng miền Nam năm?',a:'1975'},
+    {q:'Sử: ASEAN thành lập năm nào?',a:'1967'},
+    {q:'Sử: Mốc bắt đầu công cuộc Đổi mới?',a:'Đại hội VI (1986)'},
+    {q:'Sử: Chiến tranh thế giới thứ hai kết thúc?',a:'1945'},
+    {q:'Sử: Ý nghĩa lớn của Cách mạng tháng Tám?',a:'Lật đổ ách thống trị, khai sinh nước VNDCCH'}
+  ],
+  tin:[
+    {q:'Tin: Độ phức tạp tìm kiếm nhị phân?',a:'O(log n)'},
+    {q:'Tin: Độ phức tạp sắp xếp nổi bọt trung bình?',a:'O(n²)'},
+    {q:'Tin: Stack hoạt động theo nguyên tắc?',a:'LIFO (vào sau ra trước)'},
+    {q:'Tin: Queue hoạt động theo nguyên tắc?',a:'FIFO (vào trước ra trước)'},
+    {q:'Tin: Câu lệnh lặp kiểm tra điều kiện trước trong C?',a:'while'},
+    {q:'Tin: SQL dùng để làm gì?',a:'Truy vấn và quản lý cơ sở dữ liệu quan hệ'},
+    {q:'Tin: HTTP viết tắt của?',a:'HyperText Transfer Protocol'},
+    {q:'Tin: Biến boolean có mấy trạng thái?',a:'2 trạng thái: true/false'}
+  ]
+};
+
+const QUIZ_BANK={
+  toan:[
+    {q:'Hàm số y = x² có đạo hàm là?',opts:['x','2x','x²','2'],ans:1},
+    {q:'Nghiệm của phương trình x² - 1 = 0?',opts:['x=1','x=-1','x=±1','x=0'],ans:2},
+    {q:'Điều kiện để hàm số đồng biến trên khoảng?',opts:['f\'(x)<0','f\'(x)=0','f\'(x)>0','f\'(x) không xác định'],ans:2},
+    {q:'Giá trị của log₁₀(1000) bằng?',opts:['2','3','10','100'],ans:1},
+    {q:'Công thức diện tích hình tròn?',opts:['2πr','πr²','πd','r²/2'],ans:1},
+    {q:'Số nghiệm thực của phương trình x²+1=0?',opts:['0','1','2','Vô số'],ans:0}
+  ],
+  van:[
+    {q:'Tác phẩm "Vợ nhặt" của ai?',opts:['Nam Cao','Tô Hoài','Kim Lân','Nguyễn Minh Châu'],ans:2},
+    {q:'Nghị luận xã hội thường yêu cầu khoảng?',opts:['100 chữ','200 chữ','400 chữ','600 chữ'],ans:1},
+    {q:'Phần đọc hiểu thường kiểm tra?',opts:['Giải toán','Cảm thụ văn bản','Viết code','Dịch Anh-Việt'],ans:1},
+    {q:'Biện pháp tu từ "so sánh" là?',opts:['Gọi tên sự vật','Đối chiếu hai đối tượng có nét tương đồng','Nói giảm','Điệp ngữ'],ans:1},
+    {q:'Kết bài nghị luận văn học nên?',opts:['Nêu lại đề bài','Khái quát và mở rộng vấn đề','Kể lại tác phẩm','Viết 1 câu'],ans:1},
+    {q:'Lỗi thường gặp khiến mất điểm Văn?',opts:['Dẫn chứng hợp lý','Mạch lạc tốt','Sai chính tả và lạc đề','Phân tích nghệ thuật'],ans:2}
+  ],
+  anh:[
+    {q:'Thì hiện tại hoàn thành: S + ?',opts:['have/has + V3','had + V3','is/am/are + V-ing','will + V'],ans:0},
+    {q:'Từ nào là trạng từ?',opts:['quick','quickly','quicker','quickness'],ans:1},
+    {q:'If I ___ rich, I would travel.',opts:['am','was','were','be'],ans:2},
+    {q:'Synonym of "big"?',opts:['tiny','large','narrow','short'],ans:1},
+    {q:'Choose correct: She ___ to school every day.',opts:['go','goes','gone','going'],ans:1},
+    {q:'Antonym of "difficult"?',opts:['hard','easy','tough','complex'],ans:1}
+  ],
+  ly:[
+    {q:'Định luật bảo toàn năng lượng thuộc môn?',opts:['Sinh','Lý','Văn','Địa'],ans:1},
+    {q:'Đơn vị của cường độ dòng điện?',opts:['V','A','W','Ω'],ans:1},
+    {q:'Công thức công suất điện đúng?',opts:['P=UI','P=U/R','P=I/R','P=U+I'],ans:0},
+    {q:'Sóng điện từ truyền được trong?',opts:['Chân không','Chỉ chất rắn','Chỉ chất lỏng','Không truyền được'],ans:0},
+    {q:'Ánh sáng đơn sắc có đặc điểm?',opts:['Nhiều bước sóng','Một bước sóng xác định','Không có bước sóng','Không truyền thẳng'],ans:1},
+    {q:'Hiện tượng cộng hưởng xảy ra khi?',opts:['f ngoại lực = f riêng','f ngoại lực > f riêng','f ngoại lực < f riêng','Không phụ thuộc tần số'],ans:0}
+  ],
+  hoa:[
+    {q:'Số oxi hóa của O trong H₂O là?',opts:['+2','0','-2','-1'],ans:2},
+    {q:'Kim loại nào dẫn điện tốt nhất?',opts:['Sắt','Nhôm','Đồng','Bạc'],ans:3},
+    {q:'Dung dịch có pH=2 là?',opts:['Bazơ mạnh','Axit mạnh','Trung tính','Muối trung hòa'],ans:1},
+    {q:'Chất nào là axit?',opts:['NaOH','HCl','NaCl','K₂SO₄'],ans:1},
+    {q:'Phản ứng trung hòa tạo ra?',opts:['Muối + nước','Muối + khí','Axit + kim loại','Muối + bazơ'],ans:0},
+    {q:'Ion tạo kết tủa trắng với AgNO₃?',opts:['SO₄²⁻','NO₃⁻','Cl⁻','CO₃²⁻'],ans:2}
+  ],
+  su:[
+    {q:'Mốc kết thúc Chiến tranh thế giới thứ 2?',opts:['1943','1944','1945','1946'],ans:2},
+    {q:'Năm thành lập ASEAN?',opts:['1965','1966','1967','1968'],ans:2},
+    {q:'Nước VNDCCH ra đời năm?',opts:['1944','1945','1946','1954'],ans:1},
+    {q:'Chiến thắng Điện Biên Phủ thuộc năm?',opts:['1950','1952','1954','1956'],ans:2},
+    {q:'Đại hội mở đầu Đổi mới?',opts:['IV','V','VI','VII'],ans:2},
+    {q:'Hiệp định Paris về VN ký năm?',opts:['1971','1972','1973','1974'],ans:2}
+  ],
+  tin:[
+    {q:'CPU là viết tắt của?',opts:['Central Processing Unit','Computer Primary Unit','Central Program Utility','Control Processing User'],ans:0},
+    {q:'Cấu trúc dữ liệu LIFO là?',opts:['Queue','Stack','Tree','Graph'],ans:1},
+    {q:'Độ phức tạp của tìm kiếm tuyến tính?',opts:['O(1)','O(log n)','O(n)','O(n²)'],ans:2},
+    {q:'Ngôn ngữ đánh dấu siêu văn bản?',opts:['C','Python','HTML','SQL'],ans:2},
+    {q:'Câu lệnh rẽ nhánh phổ biến?',opts:['for','while','if','switch'],ans:2},
+    {q:'Phần mở rộng tệp JavaScript?',opts:['.java','.js','.py','.tsv'],ans:1}
+  ]
+};
+let state={tasks:[],quizBest:0,pomodoroSessions:0,flashRemembered:0,flashReview:0,dailyMissions:{}};
+let flashIndex=0;
+let currentFlashSubject='toan';
+let currentFlashDeck=[...FLASH_DECKS[currentFlashSubject]];
+let quizCurrent=[];
+let currentQuizSubject='mixed';
+let pomoSeconds=1500;
+let pomoTimer=null;
+const bootStartedAt=Date.now();
+let microLoadingTimer=null;
+const ROADMAP_STAGES={
+  1:{title:'Giai đoạn 1',text:'Ôn nền tảng 7–10 ngày: hệ thống lại công thức, dạng bài, từ khóa trọng tâm theo từng môn.'},
+  2:{title:'Giai đoạn 2',text:'Luyện theo chuyên đề 2 tuần: làm từng cụm kiến thức, ghi lại lỗi sai lặp để sửa triệt để.'},
+  3:{title:'Giai đoạn 3',text:'Luyện đề tổng hợp 2–3 tuần: mô phỏng thời gian thật, rèn chiến thuật phân bổ thời gian.'},
+  4:{title:'Giai đoạn 4',text:'Tăng tốc trước kỳ thi: tổng hợp lỗi sai cuối, ôn trọng điểm, giữ nhịp làm đề đều và ổn định.'}
+};
+
+function initRoadmapWheel(){
+  const wheel=document.querySelector('.roadmap-wheel');
+  const detailEl=document.getElementById('roadmapDetail');
+  const titleEl=document.getElementById('roadmapTitle');
+  const textEl=document.getElementById('roadmapText');
+  if(!wheel||!detailEl||!titleEl||!textEl)return;
+  const buttons=[...wheel.querySelectorAll('.roadmap-sector')];
+  const setStage=(stage)=>{
+    const key=String(stage);
+    const data=ROADMAP_STAGES[key];
+    if(!data)return;
+    buttons.forEach(btn=>{
+      const active=btn.dataset.stage===key;
+      btn.classList.toggle('active',active);
+      btn.setAttribute('aria-selected',active?'true':'false');
+    });
+    titleEl.textContent=data.title;
+    textEl.textContent=data.text;
+    detailEl.classList.remove('is-fading');
+    void detailEl.offsetWidth;
+    detailEl.classList.add('is-fading');
+  };
+  buttons.forEach(btn=>btn.addEventListener('click',()=>setStage(btn.dataset.stage)));
+  setStage('1');
+}
+
+function parseCountMeta(text){
+  const rawText=(text||'').trim();
+  const match=rawText.match(/[+-]?\d+(?:[.,]\d+)*/);
+  if(!match)return null;
+  const token=match[0];
+  const start=match.index||0;
+  const prefix=rawText.slice(0,start);
+  const suffix=rawText.slice(start+token.length);
+  const sign=token.startsWith('-')?-1:1;
+  const unsigned=token.replace(/^[+-]/,'');
+  const isThousandDot=/^\d{1,3}(?:\.\d{3})+$/.test(unsigned);
+  let target=0;
+  let decimals=0;
+  if(isThousandDot){
+    target=Number(unsigned.replace(/\./g,''))*sign;
+  }else{
+    const normalized=unsigned.replace(',','.');
+    if(normalized.includes('.'))decimals=normalized.split('.')[1].length;
+    target=Number(normalized)*sign;
+  }
+  if(!Number.isFinite(target))return null;
+  return {
+    prefix,
+    suffix,
+    target,
+    decimals,
+    isThousandDot,
+    forcePlus: token.startsWith('+')
+  };
+}
+
+function formatCountValue(value,meta){
+  const safeValue=meta.isThousandDot?Math.round(value):value;
+  let numberText='0';
+  if(meta.isThousandDot){
+    numberText=Math.abs(safeValue).toLocaleString('vi-VN');
+  }else if(meta.decimals>0){
+    numberText=Math.abs(safeValue).toFixed(meta.decimals);
+  }else{
+    numberText=String(Math.round(Math.abs(safeValue)));
+  }
+  const sign=safeValue<0?'-':(meta.forcePlus?'+':'');
+  return `${meta.prefix}${sign}${numberText}${meta.suffix}`;
+}
+
+function animateCountUp(el,duration=1100){
+  if(!el||el.dataset.countDone==='1')return;
+  const original=(el.dataset.countOriginal||el.textContent||'').trim();
+  const meta=parseCountMeta(original);
+  if(!meta)return;
+  el.dataset.countOriginal=original;
+  const start=performance.now();
+  const from=0;
+  const to=meta.target;
+  const easeOut=(t)=>1-Math.pow(1-t,3);
+  const frame=(now)=>{
+    const progress=Math.min(1,(now-start)/duration);
+    const eased=easeOut(progress);
+    const current=from+((to-from)*eased);
+    el.textContent=formatCountValue(current,meta);
+    if(progress<1){
+      requestAnimationFrame(frame);
+      return;
+    }
+    el.textContent=original;
+    el.dataset.countDone='1';
+  };
+  requestAnimationFrame(frame);
+}
+
+function initCountUp(){
+  const targets=[...document.querySelectorAll('.num, .pnum')];
+  if(!targets.length)return;
+  if(!('IntersectionObserver' in window)){
+    targets.forEach(el=>animateCountUp(el));
+    return;
+  }
+  const observer=new IntersectionObserver((entries,obs)=>{
+    entries.forEach((entry)=>{
+      if(!entry.isIntersecting)return;
+      animateCountUp(entry.target);
+      obs.unobserve(entry.target);
+    });
+  },{threshold:.45});
+  targets.forEach(el=>observer.observe(el));
+}
+
+function hidePageLoader(){
+  const loader=document.getElementById('pageLoader');
+  if(!loader)return;
+  const elapsed=Date.now()-bootStartedAt;
+  const wait=Math.max(0,500-elapsed);
+  setTimeout(()=>{
+    loader.classList.add('hide');
+    document.body.classList.remove('is-loading');
+    runRevealAnimation(true);
+    setTimeout(()=>loader.remove(),320);
+  },wait);
+}
+
+function setupInitialTextReveal(includeNav=false){
+  const selectors=[
+    '.page.active h1, .page.active h2, .page.active h3, .page.active p, .page.active .num, .page.active .label, .page.active .tag, .page.active .et, .page.active .task-title, .page.active .task-meta',
+    '.page.active .ec, .page.active .gc, .page.active .tool-card, .page.active .pstat, .page.active .home-mini, .page.active .home-li, .page.active .task-item, .page.active .fb, .page.active .trust-ribbon, .page.active .ticker-wrap',
+    '.site-footer .footer-title, .site-footer .footer-item, .site-footer .footer-copy'
+  ];
+  if(includeNav)selectors.unshift('nav .logo, nav .nav-links a');
+  const targets=[...new Set(document.querySelectorAll(selectors.join(', ')))];
+  targets.sort((a,b)=>{
+    const ar=a.getBoundingClientRect();
+    const br=b.getBoundingClientRect();
+    const byTop=ar.top-br.top;
+    if(Math.abs(byTop)>4)return byTop;
+    return ar.left-br.left;
+  });
+  targets.forEach((el,index)=>{
+    el.classList.add('text-reveal-item');
+    el.style.setProperty('--reveal-order',String(index));
+  });
+  return targets.length;
+}
+
+function runRevealAnimation(includeNav=false){
+  document.body.classList.remove('text-reveal-run');
+  document.body.classList.add('text-reveal-pending');
+  const targetCount=setupInitialTextReveal(includeNav);
+  const totalDuration=Math.min(2800,680+(targetCount*26));
+  requestAnimationFrame(()=>{
+    document.body.classList.add('text-reveal-run');
+    setTimeout(()=>{
+      document.body.classList.remove('text-reveal-pending');
+      document.body.classList.remove('text-reveal-run');
+    },totalDuration);
+  });
+}
+
+function triggerMicroLoading(duration=180){
+  document.body.classList.add('is-microloading');
+  if(microLoadingTimer)clearTimeout(microLoadingTimer);
+  microLoadingTimer=setTimeout(()=>{
+    document.body.classList.remove('is-microloading');
+    microLoadingTimer=null;
+  },duration);
+}
+
+function sp(id,el){triggerMicroLoading();document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));document.getElementById(id).classList.add('active');el.classList.add('active');}
+function fc(g,f,btn){triggerMicroLoading(140);document.querySelectorAll('#'+g+' .ec').forEach(c=>{const v=c.dataset.f||'';c.style.display=(f==='all'||v.includes(f))?'flex':'none';});btn.closest('.fb').querySelectorAll('button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+function sa(title,score,type){
+  document.getElementById('mt').textContent='🔑 Đáp Án – '+title;
+  document.getElementById('ms').textContent=score;
+  const n=type==='van'?0:type==='hsa'?20:50;
+  let html='';
+  if(type==='van'){html=`<div class="as"><h4>Gợi ý đáp án Ngữ Văn</h4><p style="color:var(--muted);font-size:.9rem;line-height:1.8">• <strong>Đọc hiểu:</strong> 3 điểm – Trả lời theo đúng ý văn bản<br>• <strong>Nghị luận xã hội:</strong> 2 điểm – Khoảng 200 chữ, đủ bố cục, liên hệ thực tế<br>• <strong>Nghị luận văn học:</strong> 5 điểm – Phân tích tác phẩm, đánh giá nghệ thuật</p></div>`}
+  else{const g=A.slice(0,n).map((a,i)=>`<div class="ai"><div class="q">Câu ${i+1}</div><div class="a">${a}</div></div>`).join('');html=`<div class="as"><h4>Bảng đáp án mẫu (${n} câu)</h4><div class="ag">${g}</div></div>`;}
+  html+=`<p style="color:var(--muted);font-size:.82rem;margin-top:1rem;line-height:1.7">⚠️ Đây là đáp án minh họa. Vui lòng đối chiếu đáp án chính thức từ Bộ GD&ĐT hoặc ĐHQG.</p>`;
+  document.getElementById('mc2').innerHTML=html;
+  document.getElementById('modal').classList.add('open');
+}
+function cm(){document.getElementById('modal').classList.remove('open');}
+document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)cm();});
+
+function getHsaLiteratureOrder(fileName){
+  const patterns=[
+    /HSA\s*(\d+)/i,
+    /PHẦN\s+ĐỀ\s*(\d+)/i,
+    /^(\d+)\./,
+    /đề\s+văn\s+hsa\s*(\d+)/i
+  ];
+  for(const p of patterns){
+    const m=fileName.match(p);
+    if(m)return Number(m[1]);
+  }
+  const fallback=fileName.match(/(\d+)/);
+  return fallback?Number(fallback[1]):999;
+}
+
+function getHsaMathOrder(fileName){
+  const patterns=[
+    /HSA\s*(\d+)/i,
+    /PHẦN\s+ĐỀ\s*(\d+)/i,
+    /ĐỀ\s*SỐ\s*(\d+)/i,
+    /ĐỀ\s*(\d+)/i,
+    /toán\s*hsa\s*(\d+)/i,
+    /^\s*(\d+)\./
+  ];
+  for(const p of patterns){
+    const m=fileName.match(p);
+    if(m)return Number(m[1]);
+  }
+  if(/PHẦN TOÁN HỌC \(ĐỀ\)/i.test(fileName))return 13;
+  if(/PHẦN TOÁN HỌC \(ĐÁP ÁN\)/i.test(fileName))return 13;
+  const fallback=fileName.match(/(\d+)/);
+  return fallback?Number(fallback[1]):999;
+}
+
+function getHsaEnglishOrder(fileName){
+  const bracket=fileName.match(/\((\d+)\)/);
+  if(bracket)return Number(bracket[1]);
+  if(/ANH HSA - ĐỀ\.pdf/i.test(fileName))return 8;
+  if(/HSA ANH - ĐỀ\.pdf/i.test(fileName))return 9;
+  if(/TIẾNG ANH HSA - ĐỀ\.pdf/i.test(fileName))return 10;
+  const fallback=fileName.match(/(\d+)/);
+  return fallback?Number(fallback[1]):999;
+}
+
+function getThptLiteratureOrder(fileName){
+  const m=fileName.match(/^(\d+)\./);
+  if(m)return Number(m[1]);
+  return 1000;
+}
+
+function getThptMathOrder(fileName){
+  const direct=fileName.match(/Đề số\s*(\d+)/i);
+  if(direct)return Number(direct[1]);
+  const code=fileName.match(/T(\d+)/i);
+  if(code)return Number(code[1]);
+  const fallback=fileName.match(/(\d+)/);
+  return fallback?Number(fallback[1]):999;
+}
+
+function getThptEnglishOrder(fileName){
+  const round=fileName.match(/Lần\s*(\d+)/i);
+  if(round)return Number(round[1]);
+  const dup=fileName.match(/\((\d+)\)/);
+  if(dup)return 100+Number(dup[1]);
+  return 1000;
+}
+
+function getThptPhysicsOrder(fileName){
+  const m=fileName.match(/^\s*(\d+)\s*\./);
+  if(m)return Number(m[1]);
+  const fallback=fileName.match(/(\d+)/);
+  return fallback?Number(fallback[1]):999;
+}
+
+function setupHsaExams(){
+  const wrap=document.getElementById('hg');
+  if(!wrap)return;
+  const orderedMathFiles=[...HSA_MATH_FILES].sort((a,b)=>{
+    const x=getHsaMathOrder(a)-getHsaMathOrder(b);
+    return x!==0?x:a.localeCompare(b,'vi');
+  });
+  const orderedLiteratureFiles=[...HSA_LITERATURE_FILES].sort((a,b)=>{
+    const x=getHsaLiteratureOrder(a)-getHsaLiteratureOrder(b);
+    return x!==0?x:a.localeCompare(b,'vi');
+  });
+  const mathAnswerMap=new Map(HSA_MATH_ANSWER_FILES.map(fileName=>[getHsaMathOrder(fileName),fileName]));
+  const literatureAnswerMap=new Map(HSA_LITERATURE_ANSWER_FILES.map(fileName=>[getHsaLiteratureOrder(fileName),fileName]));
+  const orderedEnglishFiles=[...HSA_ENGLISH_FILES].sort((a,b)=>{
+    const x=getHsaEnglishOrder(a)-getHsaEnglishOrder(b);
+    return x!==0?x:a.localeCompare(b,'vi');
+  });
+  const randomizedEnglishAnswers=shuffle(HSA_ENGLISH_ANSWER_FILES);
+  const englishItems=orderedEnglishFiles.length
+    ? orderedEnglishFiles.map((fileName,index)=>(
+      {
+        subject:'anh',
+        order:index+1,
+        total:orderedEnglishFiles.length,
+        title:`Đề HSA Tiếng Anh ${String(index+1).padStart(2,'0')}`,
+        filePath:'./ĐÈ ANH/'+fileName,
+        answerPath:randomizedEnglishAnswers.length?('./tiếng anh hsa/'+randomizedEnglishAnswers[index%randomizedEnglishAnswers.length]):'',
+        answerType:'hsa',
+        score:'100 điểm',
+        source:'folder ĐÈ ANH',
+        tagClass:'t3',
+        tagText:'ANH-HSA',
+        comingSoon:false
+      }
+    ))
+    : [{
+      subject:'anh',
+      order:1,
+      total:1,
+      title:'Mục Tiếng Anh HSA (Sắp cập nhật)',
+      filePath:'',
+      answerType:'hsa',
+      score:'100 điểm',
+      source:'Bạn sẽ thêm tài liệu sau',
+      tagClass:'t3',
+      tagText:'ANH-HSA',
+      comingSoon:true
+    }];
+  const combined=[
+    ...orderedMathFiles.map((fileName,index)=>({
+      subject:'toan',
+      order:index+1,
+      total:orderedMathFiles.length,
+      title:`Đề HSA Toán ${String(index+1).padStart(2,'0')}`,
+      filePath:'./ĐỀ TOÁN/'+fileName,
+      answerPath:mathAnswerMap.get(getHsaMathOrder(fileName))?('./đáp án toán hsa/'+mathAnswerMap.get(getHsaMathOrder(fileName))):'',
+      answerType:'hsa',
+      score:'150 điểm',
+      source:'folder ĐỀ TOÁN',
+      tagClass:'t1',
+      tagText:'TOÁN-HSA',
+      comingSoon:false
+    })),
+    ...orderedLiteratureFiles.map((fileName,index)=>({
+      subject:'van',
+      order:index+1,
+      total:orderedLiteratureFiles.length,
+      title:`Đề HSA Văn ${String(index+1).padStart(2,'0')}`,
+      filePath:'./ĐỀ VĂN/'+fileName,
+      answerPath:literatureAnswerMap.get(getHsaLiteratureOrder(fileName))?('./Đáp án văn hsa/'+literatureAnswerMap.get(getHsaLiteratureOrder(fileName))):'',
+      answerType:'van',
+      score:'Thang điểm tham khảo',
+      source:'folder ĐỀ VĂN',
+      tagClass:'t2',
+      tagText:'VĂN-HSA',
+      comingSoon:false
+    })),
+    ...englishItems
+  ];
+  wrap.innerHTML=combined.map(item=>`<div class="ec ${item.comingSoon?'coming-card':''}" data-f="${item.subject}"><div class="ct"><span class="tag ${item.tagClass} ${item.comingSoon?'coming-pill':''}">${item.tagText}</span><span class="cs">${item.comingSoon?'Sắp cập nhật':`Đề ${item.order}/${item.total}`}</span></div><div class="et">${item.title}</div><div class="em"><span>📁 Nguồn: ${item.source}</span><span>${item.comingSoon?'✨ Chờ thêm tài liệu':'📄 PDF'}</span></div><div class="ea">${item.comingSoon?'<button class="btn bo" disabled>⏳ Chờ thêm tài liệu</button><button class="btn bp" disabled>🔑 Chờ đáp án</button>':`<button class="btn bo" onclick="window.open(encodeURI('${item.filePath}'),'_blank')">📄 Xem đề</button>${item.answerPath?`<button class="btn bp" onclick="window.open(encodeURI('${item.answerPath}'),'_blank')">🧾 Đáp án</button>`:`<button class="btn bp" onclick="sa('${item.title}','${item.score}','${item.answerType}')">🔑 Gợi ý</button>`}`}</div></div>`).join('');
+}
+
+function setupThptLiteratureExams(){
+  const wrap=document.getElementById('tg');
+  if(!wrap)return;
+  wrap.querySelectorAll('.ec[data-f="van"]').forEach(card=>card.remove());
+  const files=[...THPT_LITERATURE_FILES].sort((a,b)=>{
+    const x=getThptLiteratureOrder(a)-getThptLiteratureOrder(b);
+    return x!==0?x:a.localeCompare(b,'vi');
+  });
+  const cards=files.map((fileName,index)=>`<div class="ec" data-f="van"><div class="ct"><span class="tag t2">Ngữ Văn</span><span class="cs">Đề ${index+1}/${files.length}</span></div><div class="et">Đề Văn THPT ${String(index+1).padStart(2,'0')}</div><div class="em"><span>📁 Nguồn: folder VĂN THPT</span><span>${fileName.toLowerCase().endsWith('.docx')?'📝 DOCX':'📄 PDF'}</span></div><div class="ea"><button class="btn bo" onclick="window.open(encodeURI('./VĂN THPT/${fileName}'),'_blank')">📄 Xem đề</button><button class="btn bp" onclick="sa('Đề Văn THPT ${index+1}','10⁄10','van')">🔑 Gợi ý</button></div></div>`).join('');
+  wrap.insertAdjacentHTML('beforeend',cards);
+}
+
+function setupThptMathExams(){
+  const wrap=document.getElementById('tg');
+  if(!wrap)return;
+  wrap.querySelectorAll('.ec[data-f="toan"]').forEach(card=>card.remove());
+  const files=[...THPT_MATH_FILES].sort((a,b)=>{
+    const x=getThptMathOrder(a)-getThptMathOrder(b);
+    return x!==0?x:a.localeCompare(b,'vi');
+  });
+  const cards=files.map((fileName,index)=>`<div class="ec" data-f="toan"><div class="ct"><span class="tag t1">Toán</span><span class="cs">Đề ${index+1}/${files.length}</span></div><div class="et">Đề Toán THPT ${String(index+1).padStart(2,'0')}</div><div class="em"><span>📁 Nguồn: folder TOAN THPT</span><span>📄 PDF</span></div><div class="ea"><button class="btn bo" onclick="window.open(encodeURI('./TOAN THPT/${fileName}'),'_blank')">📄 Xem đề</button><button class="btn bp" onclick="sa('Đề Toán THPT ${index+1}','10⁄10','thpt')">🔑 Gợi ý</button></div></div>`).join('');
+  wrap.insertAdjacentHTML('beforeend',cards);
+}
+
+function setupThptEnglishExams(){
+  const wrap=document.getElementById('tg');
+  if(!wrap)return;
+  wrap.querySelectorAll('.ec[data-f="anh"]').forEach(card=>card.remove());
+  const files=[...THPT_ENGLISH_FILES].sort((a,b)=>{
+    const x=getThptEnglishOrder(a)-getThptEnglishOrder(b);
+    return x!==0?x:a.localeCompare(b,'vi');
+  });
+  const cards=files.map((fileName,index)=>`<div class="ec" data-f="anh"><div class="ct"><span class="tag t3">Tiếng Anh</span><span class="cs">Đề ${index+1}/${files.length}</span></div><div class="et">Đề Tiếng Anh THPT ${String(index+1).padStart(2,'0')}</div><div class="em"><span>📁 Nguồn: folder ANH THPT</span><span>📝 DOCX</span></div><div class="ea"><button class="btn bo" onclick="window.open(encodeURI('./ANH THPT/${fileName}'),'_blank')">📄 Xem đề</button><button class="btn bp" onclick="sa('Đề Tiếng Anh THPT ${index+1}','10⁄10','thpt')">🔑 Gợi ý</button></div></div>`).join('');
+  wrap.insertAdjacentHTML('beforeend',cards);
+}
+
+function setupThptPhysicsExams(){
+  const wrap=document.getElementById('tg');
+  if(!wrap)return;
+  wrap.querySelectorAll('.ec[data-f="ly"]').forEach(card=>card.remove());
+  const files=[...THPT_PHYSICS_FILES].sort((a,b)=>{
+    const x=getThptPhysicsOrder(a)-getThptPhysicsOrder(b);
+    return x!==0?x:a.localeCompare(b,'vi');
+  });
+  const cards=files.map((fileName,index)=>`<div class="ec" data-f="ly"><div class="ct"><span class="tag t4">Vật Lý</span><span class="cs">Đề ${index+1}/${files.length}</span></div><div class="et">Đề Vật Lý THPT ${String(index+1).padStart(2,'0')}</div><div class="em"><span>📁 Nguồn: folder Vật Lý thpt</span><span>📄 PDF</span></div><div class="ea"><button class="btn bo" onclick="window.open(encodeURI('./Vật Lý thpt/${fileName}'),'_blank')">📄 Xem đề</button><button class="btn bp" onclick="sa('Đề Vật Lý THPT ${index+1}','10⁄10','thpt')">🔑 Gợi ý</button></div></div>`).join('');
+  wrap.insertAdjacentHTML('beforeend',cards);
+}
+
+function saveState(){localStorage.setItem(SKEY,JSON.stringify(state));updateProgress();}
+function loadState(){
+  const raw=localStorage.getItem(SKEY);
+  if(!raw)return;
+  try{const s=JSON.parse(raw);state={...state,...s};}
+  catch(e){}
+}
+
+function renderTasks(){
+  const box=document.getElementById('taskList');
+  if(!state.tasks.length){box.innerHTML='<p class="muted">Chưa có kế hoạch. Hãy thêm mục tiêu cho hôm nay.</p>';updateProgress();return;}
+  box.innerHTML=state.tasks.map(t=>`<div class="task-item ${t.done?'done':''}"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask('${t.id}')"><div><div class="task-title">${t.subject}: ${t.note}</div><div class="task-meta">${t.date||'Không đặt ngày'}</div></div><button class="mini-btn" onclick="removeTask('${t.id}')">Xóa</button></div>`).join('');
+  updateProgress();
+}
+
+function getTodayMissionKey(){
+  const d=new Date();
+  const y=d.getFullYear();
+  const m=String(d.getMonth()+1).padStart(2,'0');
+  const day=String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
+
+function toggleDailyMission(index){
+  const key=getTodayMissionKey();
+  if(!state.dailyMissions[key])state.dailyMissions[key]=[];
+  const list=state.dailyMissions[key];
+  const pos=list.indexOf(index);
+  if(pos>=0)list.splice(pos,1);
+  else list.push(index);
+  saveState();
+  renderDailyMissions();
+}
+
+function renderDailyMissions(){
+  const box=document.getElementById('dailyMissionList');
+  const dayEl=document.getElementById('dailyMissionDay');
+  const noteEl=document.getElementById('dailyMissionNote');
+  if(!box||!dayEl||!noteEl)return;
+  const now=new Date();
+  const weekday=now.getDay();
+  const label=WEEKDAY_LABELS[weekday];
+  const missions=DAILY_MISSIONS_BY_WEEKDAY[weekday]||[];
+  const key=getTodayMissionKey();
+  const doneSet=new Set(state.dailyMissions[key]||[]);
+  dayEl.textContent=`(${label})`;
+  box.innerHTML=missions.map((item,index)=>`<div class="task-item ${doneSet.has(index)?'done':''}"><input type="checkbox" ${doneSet.has(index)?'checked':''} onchange="toggleDailyMission(${index})"><div><div class="task-title">${item.title}</div><div class="task-meta">${item.meta}</div></div></div>`).join('');
+  noteEl.textContent=`Tiến độ hôm nay: ${doneSet.size}/${missions.length} nhiệm vụ • Cập nhật theo ngày trong tuần`;
+}
+function addTask(){
+  const subject=document.getElementById('taskSubject').value.trim();
+  const date=document.getElementById('taskDate').value;
+  const note=document.getElementById('taskNote').value.trim();
+  if(!subject||!note)return;
+  state.tasks.unshift({id:Date.now().toString(36),subject,date,note,done:false});
+  document.getElementById('taskSubject').value='';
+  document.getElementById('taskNote').value='';
+  saveState();
+  renderTasks();
+}
+function toggleTask(id){
+  state.tasks=state.tasks.map(t=>t.id===id?{...t,done:!t.done}:t);
+  saveState();
+  renderTasks();
+}
+function removeTask(id){
+  state.tasks=state.tasks.filter(t=>t.id!==id);
+  saveState();
+  renderTasks();
+}
+
+function renderFlash(){
+  const c=currentFlashDeck[flashIndex];
+  if(!c){
+    document.getElementById('flashQ').textContent='Chưa có flashcard cho môn này.';
+    document.getElementById('flashA').textContent='Bạn có thể đổi môn hoặc bổ sung dữ liệu.';
+    document.getElementById('flashMeta').textContent='0 thẻ';
+    return;
+  }
+  document.getElementById('flashQ').textContent=c.q;
+  const a=document.getElementById('flashA');
+  a.textContent=c.a;
+  a.classList.remove('open');
+  document.getElementById('flashMeta').textContent=`Môn: ${currentFlashSubject.toUpperCase()} • Thẻ ${flashIndex+1}/${currentFlashDeck.length} • Đã nhớ: ${state.flashRemembered} • Cần ôn lại: ${state.flashReview}`;
+}
+function toggleFlashAnswer(){document.getElementById('flashA').classList.toggle('open');}
+function changeFlashSubject(subject){
+  if(!FLASH_DECKS[subject])return;
+  currentFlashSubject=subject;
+  currentFlashDeck=[...FLASH_DECKS[subject]];
+  flashIndex=0;
+  renderFlash();
+}
+function shuffleFlashDeck(){
+  currentFlashDeck=shuffle(currentFlashDeck);
+  flashIndex=0;
+  renderFlash();
+}
+function markFlash(remembered){
+  if(!currentFlashDeck.length)return;
+  if(remembered)state.flashRemembered+=1;
+  else state.flashReview+=1;
+  flashIndex=(flashIndex+1)%currentFlashDeck.length;
+  saveState();
+  renderFlash();
+}
+
+function shuffle(arr){return [...arr].sort(()=>Math.random()-.5);}
+function setQuizSubject(subject){
+  currentQuizSubject=subject;
+}
+function startQuiz(){
+  const pool=currentQuizSubject==='mixed'
+    ? Object.values(QUIZ_BANK).flat()
+    : (QUIZ_BANK[currentQuizSubject]||[]);
+  if(!pool.length){
+    document.getElementById('quizWrap').innerHTML='Chưa có câu hỏi cho môn này.';
+    document.getElementById('quizResult').textContent='';
+    quizCurrent=[];
+    return;
+  }
+  quizCurrent=shuffle(pool).slice(0,5);
+  const html=quizCurrent.map((q,idx)=>`<div style="margin-bottom:.75rem"><div class="quiz-q">Câu ${idx+1}: ${q.q}</div><div class="quiz-opts">${q.opts.map((o,i)=>`<label><input type="radio" name="q${idx}" value="${i}"><span>${o}</span></label>`).join('')}</div></div>`).join('');
+  document.getElementById('quizWrap').innerHTML=html;
+  document.getElementById('quizResult').textContent='';
+}
+function submitQuiz(){
+  if(!quizCurrent.length){document.getElementById('quizResult').textContent='Hãy tạo đề trước khi nộp bài.';return;}
+  let score=0;
+  quizCurrent.forEach((q,idx)=>{
+    const checked=document.querySelector(`input[name="q${idx}"]:checked`);
+    if(checked&&Number(checked.value)===q.ans)score+=1;
+  });
+  if(score>state.quizBest)state.quizBest=score;
+  saveState();
+  document.getElementById('quizResult').textContent=`Bạn đúng ${score}/5 câu. Điểm cao nhất: ${state.quizBest}/5.`;
+}
+
+function renderPomodoro(){
+  const m=String(Math.floor(pomoSeconds/60)).padStart(2,'0');
+  const s=String(pomoSeconds%60).padStart(2,'0');
+  document.getElementById('pomodoroDisplay').textContent=`${m}:${s}`;
+}
+function togglePomodoro(){
+  const btn=document.getElementById('pomodoroBtn');
+  if(pomoTimer){
+    clearInterval(pomoTimer);
+    pomoTimer=null;
+    btn.textContent='Tiếp tục';
+    return;
+  }
+  btn.textContent='Tạm dừng';
+  pomoTimer=setInterval(()=>{
+    pomoSeconds-=1;
+    renderPomodoro();
+    if(pomoSeconds<=0){
+      clearInterval(pomoTimer);
+      pomoTimer=null;
+      pomoSeconds=1500;
+      state.pomodoroSessions+=1;
+      saveState();
+      renderPomodoro();
+      btn.textContent='Bắt đầu';
+      alert('Hoàn thành 1 phiên Pomodoro! Nghỉ ngắn 5 phút nhé.');
+    }
+  },1000);
+}
+function resetPomodoro(){
+  if(pomoTimer){clearInterval(pomoTimer);pomoTimer=null;}
+  pomoSeconds=1500;
+  document.getElementById('pomodoroBtn').textContent='Bắt đầu';
+  renderPomodoro();
+}
+
+function updateProgress(){
+  const done=state.tasks.filter(t=>t.done).length;
+  const total=state.tasks.length;
+  document.getElementById('pTask').textContent=`${done}/${total}`;
+  document.getElementById('pQuiz').textContent=`${state.quizBest}/5`;
+  document.getElementById('pFlash').textContent=state.flashRemembered;
+  document.getElementById('pPomo').textContent=state.pomodoroSessions;
+}
+
+loadState();
+setupHsaExams();
+setupThptMathExams();
+setupThptEnglishExams();
+setupThptPhysicsExams();
+setupThptLiteratureExams();
+renderTasks();
+renderDailyMissions();
+renderFlash();
+startQuiz();
+renderPomodoro();
+updateProgress();
+initRoadmapWheel();
+initCountUp();
+fc('tg','toan',document.querySelector('#thptqg .fb button'));
+
+if(document.readyState==='complete')hidePageLoader();
+else window.addEventListener('load',hidePageLoader,{once:true});
+</script>
+</body>
+</html>
