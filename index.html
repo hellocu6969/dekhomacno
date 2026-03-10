@@ -1509,15 +1509,37 @@ function updateProgress(){
 const WELCOME_REDIRECT_KEY='dkmcn_welcome_redirected';
 const WELCOME_REDIRECT_URL='https://hellocu6969.github.io/dekhomacno/';
 
+function hasWelcomeRedirectCookie(){
+  return document.cookie.split(';').some(item=>item.trim()===`${WELCOME_REDIRECT_KEY}=1`);
+}
+
+function hasSeenWelcomeRedirect(){
+  try{
+    if(localStorage.getItem(WELCOME_REDIRECT_KEY)==='1')return true;
+  }catch(e){}
+  return hasWelcomeRedirectCookie();
+}
+
+function markWelcomeRedirected(){
+  try{localStorage.setItem(WELCOME_REDIRECT_KEY,'1');}
+  catch(e){}
+  document.cookie=`${WELCOME_REDIRECT_KEY}=1; path=/; max-age=31536000; SameSite=Lax`;
+}
+
+function isWelcomeForceMode(){
+  const params=new URLSearchParams(window.location.search||'');
+  return params.get('forceWelcome')==='1';
+}
+
 function maybeShowWelcomeRedirect(){
   const modal=document.getElementById('welcomeRedirect');
   if(!modal)return;
-  if(localStorage.getItem(WELCOME_REDIRECT_KEY)==='1')return;
+  if(!isWelcomeForceMode()&&hasSeenWelcomeRedirect())return;
   modal.classList.add('open');
 }
 
 function goExploreNow(){
-  localStorage.setItem(WELCOME_REDIRECT_KEY,'1');
+  markWelcomeRedirected();
   window.location.href=WELCOME_REDIRECT_URL;
 }
 
