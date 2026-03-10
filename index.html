@@ -1540,6 +1540,14 @@ function maybeShowWelcomeRedirect(){
 
 function goExploreNow(){
   markWelcomeRedirected();
+  try{
+    if(window.top&&window.top!==window.self){
+      window.top.location.href=WELCOME_REDIRECT_URL;
+      return;
+    }
+  }catch(e){}
+  const topNavResult=window.open(WELCOME_REDIRECT_URL,'_top');
+  if(topNavResult)return;
   window.location.href=WELCOME_REDIRECT_URL;
 }
 
